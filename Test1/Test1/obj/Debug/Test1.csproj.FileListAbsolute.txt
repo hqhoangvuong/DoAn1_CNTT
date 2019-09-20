@@ -1,0 +1,17 @@
+C:\Users\HIKARI\source\repos\Test1\Test1\bin\Debug\Test1.exe.config
+C:\Users\HIKARI\source\repos\Test1\Test1\bin\Debug\Test1.exe
+C:\Users\HIKARI\source\repos\Test1\Test1\bin\Debug\Test1.pdb
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\Test1.csprojAssemblyReference.cache
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\MainWindow.g.cs
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\App.g.cs
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\Test1_MarkupCompile.cache
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\Test1_MarkupCompile.lref
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\MainWindow.baml
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\Test1.g.resources
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\Test1.Properties.Resources.resources
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\Test1.csproj.GenerateResource.cache
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\Test1.csproj.CoreCompileInputs.cache
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\Test1.exe
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\Test1.pdb
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\RenderItems\GraphLayer_UsrControl.g.cs
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\RenderItems\GraphLayer_UsrControl.baml
