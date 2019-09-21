@@ -1,0 +1,4 @@
+def AlexNet(data):
+x = layers.Conv2D(32,(3,3), activation = 'relu', name = 'conv1'(data)
+x1 = layers.Conv2D(64,(4,9), activation = 'relu', name = 'conv2'(data)
+x2 = layers.Conv2D(128,(11,15), activation = 'relu', name = 'conv3'(x1)
