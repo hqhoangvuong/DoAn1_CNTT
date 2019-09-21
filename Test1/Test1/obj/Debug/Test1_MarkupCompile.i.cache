@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\HIKARI\source\repos\Test1\Test1\App.xaml
-2-880095341
+3239615400
 
-16251892686
+19-1806889538
 151397803362
-MainWindow.xaml;RenderItems\GraphLayer_UsrControl.xaml;
+MainWindow.xaml;RenderItems\GraphLayer_UsrControl.xaml;RenderItems\LayerDetails_UsrControl.xaml;
 
-True
+False
 

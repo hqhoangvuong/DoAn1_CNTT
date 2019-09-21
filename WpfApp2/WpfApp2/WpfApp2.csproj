@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataType_UsrControl.cs" />
     <Compile Include="Layers\Conv2D.cs" />
     <Compile Include="testNode.xaml.cs">
       <DependentUpon>testNode.xaml</DependentUpon>

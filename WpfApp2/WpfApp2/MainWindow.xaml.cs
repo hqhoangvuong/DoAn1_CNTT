@@ -42,7 +42,7 @@ namespace WpfApp2
 
         private void Bnt2_Click(object sender, RoutedEventArgs e)
         {
-            mainCanvas.Children.RemoveAt(3);
+            usrcontrol2.SetAsInputNode();
         }
 
         private void TxBox1_TextInput(object sender, TextCompositionEventArgs e)
@@ -71,6 +71,7 @@ namespace WpfApp2
             Canvas.SetTop(usrcontrol2, 400);
             //txBox1.Text = usrcontrol2.txtPropety;
             mainCanvas.Children.Add(usrcontrol2);
+            usrcontrol2.CalcAnchorPoint();
         }
 
         private void BntAddLine_Click(object sender, RoutedEventArgs e)

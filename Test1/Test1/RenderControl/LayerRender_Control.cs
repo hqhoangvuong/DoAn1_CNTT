@@ -25,6 +25,10 @@ namespace Test1.RenderControl
             else
             {
                 GraphicsItemsList = new List<GraphLayer_UsrControl>();
+                GraphLayer_UsrControl InputNode = new GraphLayer_UsrControl();
+                InputNode.SetAsInputNode();
+                InputNode.txtTitle = Network_RawData.NetworkName;
+                GraphicsItemsList.Add(InputNode);
                 foreach(Layer item in Network_RawData.ListLayers)
                 {
                     GraphLayer_UsrControl layerItem = new GraphLayer_UsrControl();

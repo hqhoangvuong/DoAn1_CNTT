@@ -38,6 +38,11 @@ namespace Test1.RenderItems
             set { this.txtblockTitle.Text = string.Format(value); }
         }
 
+        public void SetAsInputNode()
+        {
+            this.Height = 25;
+        }
+
         public void txtPropety_AddLine(string lineInput)
         {
             if (txtblockPropety.Text == "")

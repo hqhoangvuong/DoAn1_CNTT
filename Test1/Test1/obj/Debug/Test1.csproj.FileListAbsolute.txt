@@ -15,3 +15,5 @@ C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\Test1.exe
 C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\Test1.pdb
 C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\RenderItems\GraphLayer_UsrControl.g.cs
 C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\RenderItems\GraphLayer_UsrControl.baml
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\RenderItems\LayerDetails_UsrControl.g.cs
+C:\Users\HIKARI\source\repos\Test1\Test1\obj\Debug\RenderItems\LayerDetails_UsrControl.baml

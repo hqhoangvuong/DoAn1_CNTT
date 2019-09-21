@@ -80,7 +80,7 @@ namespace Test1
 
                     for (; i < words.Count; i++)
                     {
-                        inbound.Add(words[i]);
+                        name = words[i];
                     }
                     Are = true;
                     break;

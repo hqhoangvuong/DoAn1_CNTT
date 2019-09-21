@@ -21,6 +21,7 @@ namespace WpfApp2
     public partial class testNode : UserControl
     {
         private int maxLength = 0;
+        public AnchorPoint AnchorPoint;
         public testNode()
         {
             InitializeComponent();
@@ -36,6 +37,11 @@ namespace WpfApp2
         {
             get { return this.txtblockTitle.Text; }
             set { this.txtblockTitle.Text = string.Format(value); }
+        }
+
+        public void SetAsInputNode()
+        {
+            this.Height = 25;
         }
 
         public void txtPropety_AddLine(string lineInput)
@@ -55,6 +61,11 @@ namespace WpfApp2
             }
 
             this.Height += 28;
+        }
+
+        public void CalcAnchorPoint()
+        {
+            AnchorPoint = new AnchorPoint(this.Height, this.Width, Canvas.GetTop(this), Canvas.GetLeft(this));
         }
 
         private void Grid_MouseEnter(object sender, MouseEventArgs e)

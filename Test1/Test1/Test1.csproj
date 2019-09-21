@@ -65,9 +65,14 @@
     <Compile Include="Layers\LayerNames.cs" />
     <Compile Include="Layers\Null.cs" />
     <Compile Include="Layers\Topology\InputLayer.cs" />
+    <Compile Include="Layers\Topology\Node.cs" />
     <Compile Include="RenderControl\LayerRender_Control.cs" />
+    <Compile Include="RenderItems\DataType_UsrControl.cs" />
     <Compile Include="RenderItems\GraphLayer_UsrControl.xaml.cs">
       <DependentUpon>GraphLayer_UsrControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RenderItems\LayerDetails_UsrControl.xaml.cs">
+      <DependentUpon>LayerDetails_UsrControl.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -82,6 +87,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RenderItems\GraphLayer_UsrControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RenderItems\LayerDetails_UsrControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
