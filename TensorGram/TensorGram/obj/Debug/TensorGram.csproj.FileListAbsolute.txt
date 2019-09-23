@@ -1,0 +1,15 @@
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\bin\Debug\TensorGram.exe.config
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\bin\Debug\TensorGram.exe
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\bin\Debug\TensorGram.pdb
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.csprojAssemblyReference.cache
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\MainWindow.g.cs
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\App.g.cs
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram_MarkupCompile.cache
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram_MarkupCompile.lref
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\MainWindow.baml
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.g.resources
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.Properties.Resources.resources
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.csproj.GenerateResource.cache
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.csproj.CoreCompileInputs.cache
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.exe
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.pdb
