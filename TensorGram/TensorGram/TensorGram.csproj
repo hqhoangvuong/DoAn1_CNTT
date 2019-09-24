@@ -55,9 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Layers\AvgPool2D.cs" />
     <Compile Include="Layers\Conv2D.cs" />
     <Compile Include="Layers\Topology\InputLayer.cs" />
     <Compile Include="Layers\Topology\Layer.cs" />
+    <Compile Include="RenderControl\ConnectorRender_Control.cs" />
+    <Compile Include="RenderControl\LayerRender_Control.cs" />
+    <Compile Include="RenderControl\PropetiesSlidePanel_Control.cs" />
     <Compile Include="TensorModel.cs" />
     <Compile Include="TextInput_Hander.cs" />
     <Page Include="MainWindow.xaml">
@@ -101,7 +105,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GraphicsObject\" />
-    <Folder Include="RenderControl\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -100,6 +100,8 @@ namespace TensorGram
             {
                 case "Conv2D":
                     return new Conv2D();
+                case "AvgPool2D":
+                    return new AvgPool2D();
                 case "Add":
                     break;
             }

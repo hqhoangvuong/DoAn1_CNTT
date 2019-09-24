@@ -33,7 +33,81 @@ namespace TensorGram.Layers
 
         public override void ReadAttribute(string _input)
         {
-            base.ReadAttribute(_input);
+            try
+            {
+                int StartIndex = -1;
+                int EndIndex = -1;
+                // ** Doc pool_size **
+                if (_input[0] == '(')
+                {
+                    // Truong hop pool_size la tuple of 2 integers
+                    StartIndex = 1; // Lay vi tri dau '(' dau tien trong chuoi + 1
+                    EndIndex = _input.IndexOf(')', 0); // Lay vi tri dau ')' dau tien trong chuoi
+                    foreach (string temp in _input.Substring(StartIndex, EndIndex - StartIndex).Split(','))
+                    {
+                        pool_size.Add(int.Parse(temp));
+                    }
+                }
+                else
+                {
+                    // Truong hop pool_size la integer
+                    EndIndex = _input.IndexOf(',', 0); // Lay vi tri dau ',' dau tien
+                    this.pool_size.Add(int.Parse(_input.Substring(0, EndIndex)));
+                }
+
+                // ** Doc strides **
+                EndIndex = _input.IndexOf(",padding", 0);
+                if (pool_size.Count == 2)
+                {
+                    StartIndex = _input.IndexOf(')', 0) + 2;
+                }
+                else if(pool_size.Count == 1)
+                {
+                    StartIndex = _input.IndexOf(',', 0) + 1;
+                }
+                // string temp1 = _input.Substring(StartIndex, EndIndex - StartIndex);
+                if (_input.Substring(StartIndex, EndIndex - StartIndex) == "None")
+                {
+
+                    this.strides = this.pool_size;
+                }
+                else
+                {
+                    if (_input.Substring(StartIndex, EndIndex - StartIndex)[0] == '(')
+                    {
+                        // Truong hop strides la tuple of 2 integers
+                        StartIndex++;
+                        EndIndex--;
+                        foreach(string temp in _input.Substring(StartIndex, EndIndex - StartIndex).Split(','))
+                        {
+                            this.strides.Add(int.Parse(temp));
+                        }
+                    }
+                    else
+                    {
+                        this.strides.Add(int.Parse(_input.Substring(StartIndex, EndIndex - StartIndex)));
+                    }
+                }
+
+                // ** Doc padding **
+                StartIndex = _input.IndexOf("padding='") + 9;
+                EndIndex = _input.IndexOf("',data_format='");
+                this.padding = _input.Substring(StartIndex, EndIndex - StartIndex);
+
+                // ** Doc data_format
+                StartIndex = EndIndex + 15;
+                EndIndex = _input.IndexOf("',name='");
+                string temp1 = _input.Substring(StartIndex, EndIndex - StartIndex);
+
+                // ** Doc ten layer **
+                StartIndex = _input.IndexOf("name='") + 6;
+                EndIndex = _input.LastIndexOf("'");
+                this.LayerName = _input.Substring(StartIndex, EndIndex - StartIndex);
+            }
+            catch
+            {
+
+            }
         }
     }
 }
