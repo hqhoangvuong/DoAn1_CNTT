@@ -19,12 +19,8 @@ namespace TensorGram.RenderControl
         protected StackPanel SlideMenu_StackPanel;
         protected TextBlock SlideMenu_TextBlock;
 
-        protected double Offset_Top = 10;
-        protected double Offset_Left = 50;
-
-        protected double MaxLeft;
-        protected double MaxRight;
-
+        protected double Offset_Y = 20;
+        protected double Offset_X = 50;
 
         public Render_MasterControl()
         {
@@ -54,7 +50,17 @@ namespace TensorGram.RenderControl
 
         public void LayerRender(TensorModel _model)
         {
-
+            // Thu nghiem
+            double Y = 50;
+            double X = MainCanvas.ActualWidth / 2;
+            foreach (Layer item in _model.Layers)
+            {
+                var _graphicItem = item.GraphicsNode;
+                Canvas.SetTop(_graphicItem, Y);
+                Canvas.SetLeft(_graphicItem, X - _graphicItem.Width / 2);
+                MainCanvas.Children.Add(_graphicItem);
+                Y += Offset_Y + _graphicItem.Height;
+            }
         }
 
         protected void RenderChild(Layer _input, ref double _CurrenTop, Canvas _maincanvas)

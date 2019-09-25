@@ -131,6 +131,7 @@ namespace TensorGram.Layers
             temp1 = temp1.Remove(temp1.LastIndexOf(", "));
             temp1 += ")";
             GraphicsNode.txtPropety_AddLine(temp1);
+            base.GraphicsNodeInitialize();
         }
     }
 }

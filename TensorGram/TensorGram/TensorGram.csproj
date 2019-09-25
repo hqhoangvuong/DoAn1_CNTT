@@ -58,6 +58,7 @@
     <Compile Include="GraphicsObject\GraphicsNode_UsrCtrl.xaml.cs">
       <DependentUpon>GraphicsNode_UsrCtrl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Layers\Add.cs" />
     <Compile Include="Layers\AvgPool2D.cs" />
     <Compile Include="Layers\Conv2D.cs" />
     <Compile Include="Layers\Topology\InputLayer.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="RenderControl\ConnectorRender_Control.cs" />
     <Compile Include="RenderControl\LayerRender_Control.cs" />
     <Compile Include="RenderControl\Render_MasterControl.cs" />
+    <Compile Include="RenderControl\SlidePanel_Control.cs" />
     <Compile Include="TensorModel.cs" />
     <Compile Include="TextInput_Hander.cs" />
     <Page Include="GraphicsObject\GraphicsNode_UsrCtrl.xaml">

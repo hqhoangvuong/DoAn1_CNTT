@@ -79,6 +79,15 @@ namespace TensorGram.Layers.Topology
             temp1 = temp1.Remove(temp1.LastIndexOf(", "));
             temp1 += ")";
             GraphicsNode.txtPropety_AddLine(temp1);
+            base.GraphicsNodeInitialize();
+        }
+
+        public override List<string> ToString()
+        {
+            base.ToString();
+            ReturnListToString.Add("filter: " + this.filter.ToString());
+            ReturnListToString.Add("kernel_size" + string.Join(", ", kernel_size));
+            return ReturnListToString;
         }
     }
 }

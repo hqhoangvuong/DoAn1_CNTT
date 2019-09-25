@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TensorGram.GraphicsObject"
              mc:Ignorable="d" Height="54.667" Width="221">
-    <Grid Name="MainGrid">
+    <Grid Name="MainGrid" MouseLeftButtonDown="MainGrid_MouseLeftButtonDown">
         <Grid.RowDefinitions>
             <RowDefinition Height="29"/>
             <RowDefinition/>

@@ -34,6 +34,7 @@ namespace TensorGram.Layers
         public double Mod;
         public GraphicsObject.GraphicsNode_UsrCtrl GraphicsNode;
         public bool isRendered;
+        public List<string> ReturnListToString;
 
         public Layer()
         {
@@ -76,12 +77,20 @@ namespace TensorGram.Layers
         [Obsolete]
         public virtual void GraphicsNodeInitialize()
         {
-
+            GraphicsNode.LayerName = this.LayerName;
         }
 
         public virtual List<string> GetAttribute()
         {
             return new List<string>();
+        }
+
+        public virtual List<string> ToString()
+        {
+            ReturnListToString = new List<string>();
+            ReturnListToString.Add("Layer name: " + this.LayerName);
+            ReturnListToString.Add("Layer type: " + Enum.GetName(typeof(LayerTypes), this.Type));
+            return ReturnListToString;
         }
 
     }

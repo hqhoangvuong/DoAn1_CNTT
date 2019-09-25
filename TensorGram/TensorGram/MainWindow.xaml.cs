@@ -41,6 +41,9 @@ namespace TensorGram
                 InputHander = new TextInput_Hander(temp, ref this.Model);
                 RenderHander = new Render_MasterControl(MainCanvas, SlideMenu_StackPanel, SlidePanel_TextBlock, this.Model);
                 ViewCenter();
+
+                // Nap du lieu slidePanel_Control
+                SlidePanel_Control.Init_SlidePanel_Control(SlideMenu_StackPanel, SlidePanel_TextBlock, Resources["ShowMenu"] as Storyboard, this.Model.Layers);
             }
         }
 

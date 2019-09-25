@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TensorGram.RenderControl;
 
 namespace TensorGram.GraphicsObject
 {
@@ -27,7 +28,7 @@ namespace TensorGram.GraphicsObject
         public string CurrentTitleColor;
         public string CurrentAttributeColor;
 
-        public double ChildLeft;
+        public string LayerName;
 
         public GraphicsNode_UsrCtrl()
         {
@@ -36,7 +37,6 @@ namespace TensorGram.GraphicsObject
             this.CurrentTitleColor = "#30302F";
             this.CurrentAttributeColor = "#2D2D2D";
             this.maxLength = txtblockPropety.Width;
-            this.ChildLeft = 0;
             ApplyColor();
         }
 
@@ -47,7 +47,6 @@ namespace TensorGram.GraphicsObject
             this.CurrentTitleColor = "#30302F";
             this.CurrentAttributeColor = "#2D2D2D";
             this.maxLength = txtblockPropety.Width;
-            this.ChildLeft = 0;
             ApplyColor();
         }
 
@@ -165,6 +164,11 @@ namespace TensorGram.GraphicsObject
                 default:
                     break;
             }
+        }
+
+        private void MainGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            SlidePanel_Control.SlidePanel_Show(this.LayerName);
         }
     }
 }
