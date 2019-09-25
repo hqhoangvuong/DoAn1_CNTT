@@ -55,15 +55,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GraphicsObject\GraphicsNode_UsrCtrl.xaml.cs">
+      <DependentUpon>GraphicsNode_UsrCtrl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Layers\AvgPool2D.cs" />
     <Compile Include="Layers\Conv2D.cs" />
     <Compile Include="Layers\Topology\InputLayer.cs" />
     <Compile Include="Layers\Topology\Layer.cs" />
     <Compile Include="RenderControl\ConnectorRender_Control.cs" />
     <Compile Include="RenderControl\LayerRender_Control.cs" />
-    <Compile Include="RenderControl\PropetiesSlidePanel_Control.cs" />
+    <Compile Include="RenderControl\Render_MasterControl.cs" />
     <Compile Include="TensorModel.cs" />
     <Compile Include="TextInput_Hander.cs" />
+    <Page Include="GraphicsObject\GraphicsNode_UsrCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -103,8 +110,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GraphicsObject\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

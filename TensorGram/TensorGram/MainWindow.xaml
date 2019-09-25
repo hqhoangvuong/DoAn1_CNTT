@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TensorGram"
         mc:Ignorable="d"
-        Title="MainWindow" Height="732" Width="1280">
+        Title="TensorGram" Height="732" Width="1280">
     <Window.Resources>
         <Storyboard x:Key ="ShowMenu">
             <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0, 0, -250, 0" To="0, 0, 0, 0" DecelerationRatio=".8" Duration="0:0:.5"/>
@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Background="#FF05B405">
-            <RichTextBox x:Name="txtCodeInput" Height="634" Background="Black" Foreground="#FF03FF03" FontSize="14" FontFamily="Consolas" Block.LineHeight="4" BorderBrush="Green">
+            <RichTextBox x:Name="txtCodeInput" Background="#FF2D2D2D" Foreground="#FF03FF03" FontSize="14" FontFamily="Consolas" Block.LineHeight="4" BorderBrush="Green" Height="634">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text=""/>
@@ -35,22 +35,20 @@
             </Button>
 
         </StackPanel>
-        <StackPanel Grid.Column="1" Panel.ZIndex="2" Name="LeftMenu" Orientation="Horizontal" Height="720" Width="250" HorizontalAlignment="Right" Margin="0,0,-250,0">
+        <StackPanel Grid.Column="1" Panel.ZIndex="2" Name="SlideMenu_StackPanel" Orientation="Horizontal" Height="720" Width="250" HorizontalAlignment="Right" Margin="0,0,-250,0">
             <Border BorderBrush="AliceBlue" BorderThickness="1" Width="250" Height="720" Background="#FF343434">
                 <Grid>
                     <Button x:Name="bntHide" Click="bntHide_Click" Content="✕" Visibility="Visible" Margin="198,2.706,10,675.294" FontSize="18" Width="40" Height="40" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"/>
-                    <TextBlock x:Name="TextBlock_Data_Presentation" Margin="10,45,10,58.54" TextWrapping="Wrap" Text="THIS IS A TEST" Foreground="White" FontWeight="Bold" FontFamily="Consolas"/>
+                    <TextBlock x:Name="SlidePanel_TextBlock" Margin="10,45,10,65" TextWrapping="Wrap" Text="THIS IS A TEST" Foreground="White" FontWeight="Bold" FontFamily="Consolas"/>
                     <Label Content="NODE PROPERTIES" HorizontalAlignment="Left" Margin="4.706,5.736,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White"/>
 
                 </Grid>
             </Border>
         </StackPanel>
 
-        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Visible" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
-            <Grid Name="GridWorkspace">
-                <Canvas x:Name="MainCanvas">
-
-                </Canvas>
+        <ScrollViewer x:Name="MainScrollViewer" Grid.Column="1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
+            <Grid Name="GridWorkspace" Height="5000" Width="5000">
+                <Canvas x:Name="MainCanvas" Background="#FF414141" Height="5000" HorizontalAlignment="Center" Width="5000" Margin="-2500,0,-2500,-4300" VerticalAlignment="Top"/>
             </Grid>
         </ScrollViewer>
     </Grid>

@@ -64,5 +64,21 @@ namespace TensorGram.Layers.Topology
 
             }
         }
+
+        [Obsolete]
+        public override void GraphicsNodeInitialize()
+        {
+            this.GraphicsNode.NodeByType(Enum.GetName(typeof(LayerTypes), this.Type));
+
+            GraphicsNode.txtPropety_AddLine("filter = " + filter);
+
+            string temp1 = "";
+            temp1 = "kernel_size = (";
+            foreach (int i in kernel_size)
+                temp1 += i.ToString() + ", ";
+            temp1 = temp1.Remove(temp1.LastIndexOf(", "));
+            temp1 += ")";
+            GraphicsNode.txtPropety_AddLine(temp1);
+        }
     }
 }

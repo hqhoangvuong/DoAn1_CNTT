@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using TensorGram.RenderControl;
 namespace TensorGram
 {
     /// <summary>
@@ -21,9 +21,14 @@ namespace TensorGram
     /// </summary>
     public partial class MainWindow : Window
     {
+        TensorModel Model;
+        TextInput_Hander InputHander;
+        Render_MasterControl RenderHander;
+
         public MainWindow()
         {
             InitializeComponent();
+            this.Model = new TensorModel();
         }
 
         private void BntExec_Click(object sender, RoutedEventArgs e)
@@ -33,15 +38,21 @@ namespace TensorGram
                 return;
             else
             {
-                TextInput_Hander InputHander = new TextInput_Hander(temp);
-
+                InputHander = new TextInput_Hander(temp, ref this.Model);
+                RenderHander = new Render_MasterControl(MainCanvas, SlideMenu_StackPanel, SlidePanel_TextBlock, this.Model);
+                ViewCenter();
             }
+        }
+
+        private void ViewCenter()
+        {
+            MainScrollViewer.ScrollToHorizontalOffset(MainCanvas.ActualWidth / 2 - 450);
         }
 
         private void bntHide_Click(object sender, RoutedEventArgs e)
         {
             Storyboard sb = Resources["HideMenu"] as Storyboard;
-            sb.Begin(LeftMenu);
+            sb.Begin(SlideMenu_StackPanel);
         }
     }
 }

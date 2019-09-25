@@ -29,7 +29,11 @@ namespace TensorGram.Layers
         public string LayerName;
         public LayerTypes Type;
         public List<string> Inboundlayer;
+        public List<Layer> ChildNode;
         public string OutboundLayer;
+        public double Mod;
+        public GraphicsObject.GraphicsNode_UsrCtrl GraphicsNode;
+        public bool isRendered;
 
         public Layer()
         {
@@ -37,6 +41,10 @@ namespace TensorGram.Layers
             this.Type = LayerTypes.Layer;
             this.Inboundlayer = new List<string>();
             this.OutboundLayer = "";
+            GraphicsNode = new GraphicsObject.GraphicsNode_UsrCtrl();
+            this.ChildNode = new List<Layer>();
+            isRendered = false;
+            this.Mod = 0;
         }
 
         protected virtual void Dispose(bool disposing)
@@ -63,6 +71,17 @@ namespace TensorGram.Layers
         public virtual void ReadAttribute(string _input)
         {
 
+        }
+
+        [Obsolete]
+        public virtual void GraphicsNodeInitialize()
+        {
+
+        }
+
+        public virtual List<string> GetAttribute()
+        {
+            return new List<string>();
         }
 
     }

@@ -12,7 +12,7 @@ namespace TensorGram
     public class TextInput_Hander
     {
         protected List<string> RawTextData;
-        public TextInput_Hander(string textinput)
+        public TextInput_Hander(string textinput, ref TensorModel _ModelOutput)
         {
             try
             {
@@ -24,7 +24,7 @@ namespace TensorGram
                     RawTextData.Add(myString.Replace(" ", string.Empty));
                 }
 
-                ReadModel(RawTextData);
+                _ModelOutput = ReadModel(RawTextData);
             }
             catch
             {
@@ -90,7 +90,7 @@ namespace TensorGram
             // Tao layer theo type cua no roi truyen string Attribute vao doc du lieu => Dua ra layer hoan chinh
             // Ham doc du lieu tu string Attribute thi moi layer co mot ham rieng, goi tu layer do
             layertemp.ReadAttribute(Attribute);
-
+            layertemp.GraphicsNodeInitialize();
             return layertemp;
         }
 

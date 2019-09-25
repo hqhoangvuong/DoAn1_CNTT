@@ -13,3 +13,5 @@ C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj
 C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.csproj.CoreCompileInputs.cache
 C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.exe
 C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.pdb
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\GraphicsObject\GraphicsNode_UsrCtrl.g.cs
+C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\GraphicsObject\GraphicsNode_UsrCtrl.baml

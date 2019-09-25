@@ -21,6 +21,12 @@ namespace TensorGram.Layers.Topology
             this.LayerName = "input";
             this.OutboundLayer = outbound;
             this.Type = LayerTypes.InputLayer;
+            GraphicsNodeInitialize();
+        }
+        [Obsolete]
+        public override void GraphicsNodeInitialize()
+        {
+            this.GraphicsNode.NodeByType(Enum.GetName(typeof(LayerTypes), this.Type));
         }
     }
 }

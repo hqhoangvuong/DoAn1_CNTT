@@ -16,6 +16,7 @@ namespace TensorGram.Layers
 
         public AvgPool2D()
         {
+            this.Type = LayerTypes.AvgPool2D;
             this.pool_size = new List<int>();
             this.strides = new List<int>();
             this.padding = "";
@@ -24,6 +25,7 @@ namespace TensorGram.Layers
 
         public AvgPool2D(string name)
         {
+            this.Type = LayerTypes.MaxPool2D;
             this.LayerName = name;
             this.pool_size = new List<int>();
             this.strides = new List<int>();
@@ -108,6 +110,27 @@ namespace TensorGram.Layers
             {
 
             }
+
+        }
+
+        [Obsolete]
+        public override void GraphicsNodeInitialize()
+        {
+            string temp1 = "";
+            this.GraphicsNode.NodeByType(Enum.GetName(typeof(LayerTypes), this.Type));
+            temp1 = "pool_size = (";
+            foreach (int i in pool_size)
+                temp1 += i.ToString() + ", ";
+            temp1 = temp1.Remove(temp1.LastIndexOf(", "));
+            temp1 += ")";
+            GraphicsNode.txtPropety_AddLine(temp1);
+
+            temp1 = "strides = (";
+            foreach (int i in strides)
+                temp1 += i.ToString() + ", ";
+            temp1 = temp1.Remove(temp1.LastIndexOf(", "));
+            temp1 += ")";
+            GraphicsNode.txtPropety_AddLine(temp1);
         }
     }
 }
