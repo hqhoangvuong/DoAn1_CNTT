@@ -85,8 +85,14 @@ namespace TensorGram.Layers.Topology
         public override List<string> ToString()
         {
             base.ToString();
-            ReturnListToString.Add("filter: " + this.filter.ToString());
-            ReturnListToString.Add("kernel_size" + string.Join(", ", kernel_size));
+            ReturnListToString.Add("\nAttributes");
+            ReturnListToString.Add("     filter: " + this.filter.ToString());
+            ReturnListToString.Add("\nInputs:");
+            ReturnListToString.Add("     kernel_size (" + string.Join(", ", kernel_size) +")");
+            foreach (string i in this.Inboundlayer)
+                ReturnListToString.Add("     " + i);
+            ReturnListToString.Add("\nOutputs:");
+            ReturnListToString.Add("     " + this.OutboundLayer);
             return ReturnListToString;
         }
     }

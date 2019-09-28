@@ -22,7 +22,7 @@ namespace TensorGram.GraphicsObject
     public partial class GraphicsNode_UsrCtrl : UserControl
     {
         private double maxLength;
-        //public AnchorPoint AnchorPoint;
+        public AnchorPoint AnchorPoint;
         public string NodeType;
 
         public string CurrentTitleColor;
@@ -106,13 +106,14 @@ namespace TensorGram.GraphicsObject
         public void Transform2SingleLine()
         {
             AttributeGrid.Visibility = System.Windows.Visibility.Hidden;
+            this.Height = 29;
             TitleZone.CornerRadius = new CornerRadius(10, 10, 10, 10);
         }
 
-        //public void CalcAnchorPoint()
-        //{
-        //    AnchorPoint = new AnchorPoint(this.Height, this.Width, Canvas.GetTop(this), Canvas.GetLeft(this));
-        //}
+        public void CalcAnchorPoint()
+        {
+            AnchorPoint = new AnchorPoint(this.Height, this.Width, Canvas.GetTop(this), Canvas.GetLeft(this));
+        }
 
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
         {

@@ -39,7 +39,7 @@
             <Border BorderBrush="AliceBlue" BorderThickness="1" Width="250" Height="720" Background="#FF343434">
                 <Grid>
                     <Button x:Name="bntHide" Click="bntHide_Click" Content="✕" Visibility="Visible" Margin="198,2.706,10,675.294" FontSize="18" Width="40" Height="40" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"/>
-                    <TextBlock x:Name="SlidePanel_TextBlock" Margin="10,45,10,65" TextWrapping="Wrap" Text="THIS IS A TEST" Foreground="White" FontWeight="Bold" FontFamily="Consolas"/>
+                    <TextBlock x:Name="SlidePanel_TextBlock" Margin="10,45,10,65" TextWrapping="Wrap" Foreground="White" FontSize="22"/>
                     <Label Content="NODE PROPERTIES" HorizontalAlignment="Left" Margin="4.706,5.736,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White"/>
 
                 </Grid>

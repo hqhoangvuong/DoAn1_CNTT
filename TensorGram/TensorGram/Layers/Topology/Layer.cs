@@ -29,9 +29,9 @@ namespace TensorGram.Layers
         public string LayerName;
         public LayerTypes Type;
         public List<string> Inboundlayer;
-        public List<Layer> ChildNode;
+        public List<Layer> ChildLayer;
+        public List<Layer> ParentLayer;
         public string OutboundLayer;
-        public double Mod;
         public GraphicsObject.GraphicsNode_UsrCtrl GraphicsNode;
         public bool isRendered;
         public List<string> ReturnListToString;
@@ -43,9 +43,9 @@ namespace TensorGram.Layers
             this.Inboundlayer = new List<string>();
             this.OutboundLayer = "";
             GraphicsNode = new GraphicsObject.GraphicsNode_UsrCtrl();
-            this.ChildNode = new List<Layer>();
+            this.ChildLayer = new List<Layer>();
+            this.ParentLayer = new List<Layer>();
             isRendered = false;
-            this.Mod = 0;
         }
 
         protected virtual void Dispose(bool disposing)

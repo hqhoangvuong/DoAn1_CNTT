@@ -39,7 +39,7 @@ namespace TensorGram
             else
             {
                 InputHander = new TextInput_Hander(temp, ref this.Model);
-                RenderHander = new Render_MasterControl(MainCanvas, SlideMenu_StackPanel, SlidePanel_TextBlock, this.Model);
+                RenderHander = new Render_MasterControl(MainCanvas, this.Model);
                 ViewCenter();
 
                 // Nap du lieu slidePanel_Control
@@ -56,6 +56,7 @@ namespace TensorGram
         {
             Storyboard sb = Resources["HideMenu"] as Storyboard;
             sb.Begin(SlideMenu_StackPanel);
+            SlidePanel_Control.Slidepanel_Opened = false;
         }
     }
 }

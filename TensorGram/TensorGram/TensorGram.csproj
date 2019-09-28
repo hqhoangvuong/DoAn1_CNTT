@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GraphicsObject\AnchorPoint.cs" />
+    <Compile Include="GraphicsObject\Arrow.cs" />
     <Compile Include="GraphicsObject\GraphicsNode_UsrCtrl.xaml.cs">
       <DependentUpon>GraphicsNode_UsrCtrl.xaml</DependentUpon>
     </Compile>
@@ -112,6 +114,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Graph\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
