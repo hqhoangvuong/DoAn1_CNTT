@@ -12,7 +12,7 @@ namespace TensorGram.GraphicsObject
 {
     public static class Arrow
     {
-
+        public static Color ArrowColor = (Color)ColorConverter.ConvertFromString("#4B4A4B");
         public static Shape DrawLinkArrow(Point p1, Point p2)
         {
             GeometryGroup lineGroup = new GeometryGroup();
@@ -52,7 +52,9 @@ namespace TensorGram.GraphicsObject
             System.Windows.Shapes.Path path = new System.Windows.Shapes.Path();
             path.Data = lineGroup;
             path.StrokeThickness = 2;
-            path.Stroke = path.Fill = Brushes.Red;
+
+            //path.Stroke = path.Fill = (SolidColorBrush)(new BrushConverter().ConvertFrom("#4B4A4B"));
+            path.Stroke = path.Fill = Brushes.White;
 
             return path;
         }

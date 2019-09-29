@@ -87,11 +87,12 @@ namespace TensorGram.Layers.Topology
             base.ToString();
             ReturnListToString.Add("\nAttributes");
             ReturnListToString.Add("     filter: " + this.filter.ToString());
-            ReturnListToString.Add("\nInputs:");
+            ReturnListToString.Add("     activation: " + this.activation);
+            ReturnListToString.Add("\nInputs");
             ReturnListToString.Add("     kernel_size (" + string.Join(", ", kernel_size) +")");
             foreach (string i in this.Inboundlayer)
                 ReturnListToString.Add("     " + i);
-            ReturnListToString.Add("\nOutputs:");
+            ReturnListToString.Add("\nOutputs");
             ReturnListToString.Add("     " + this.OutboundLayer);
             return ReturnListToString;
         }

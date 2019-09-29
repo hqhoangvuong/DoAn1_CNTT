@@ -58,7 +58,7 @@ namespace TensorGram.RenderControl
 
                             // Create a red Brush  
                             SolidColorBrush redBrush = new SolidColorBrush();
-                            redBrush.Color = Colors.Red;
+                            redBrush.Color = Colors.White;
 
                             // Set Line's width and color  
                             _line.StrokeThickness = 2;
@@ -85,7 +85,7 @@ namespace TensorGram.RenderControl
 
             // Create a red Brush  
             SolidColorBrush redBrush = new SolidColorBrush();
-            redBrush.Color = Colors.Red;
+            redBrush.Color = Colors.White;
 
             // Set Line's width and color  
             _line.StrokeThickness = 2;

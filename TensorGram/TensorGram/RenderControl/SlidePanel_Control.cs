@@ -7,6 +7,8 @@ using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using System.Windows.Media;
 using TensorGram.Layers;
+using System.Windows.Documents;
+using System.Windows;
 
 namespace TensorGram.RenderControl
 {
@@ -36,9 +38,26 @@ namespace TensorGram.RenderControl
                     RenderControl_SlidePanel_Textblock.Text = string.Empty;
                     foreach (string temp in _layer.ToString())
                     {
-                        RenderControl_SlidePanel_Textblock.Text += temp + System.Environment.NewLine;
-                        if (temp == "<Attributes>") ;
+                        //switch (temp)
+                        //{
+                        //    case "\nAttributes":
+                        //        RenderControl_SlidePanel_Textblock.Inlines.Add(new Run("Attributes\n") { Foreground = Brushes.Blue, FontStyle = FontStyles.Italic });
+                        //        break;
+                        //        case 
+                        //    default:
+                        //        //RenderControl_SlidePanel_Textblock.Text += temp + System.Environment.NewLine;
+                        //        RenderControl_SlidePanel_Textblock.Inlines.Add(new Run(temp + "\n") /*{ Foreground = Brushes.Blue, FontStyle = FontStyles.Italic }*/);
+                        //        break;
+                        //}
 
+                        if (temp == "\nOutputs" || temp == "\nAttributes" || temp == "\nInputs")
+                        {
+                            RenderControl_SlidePanel_Textblock.Inlines.Add(new Run(temp + "\n") { Foreground = Brushes.Blue, FontStyle = FontStyles.Italic });
+                        }
+                        else
+                        {
+                            RenderControl_SlidePanel_Textblock.Inlines.Add(new Run(temp + "\n") /*{ Foreground = Brushes.Blue, FontStyle = FontStyles.Italic }*/);
+                        }
                     }
                     if (!Slidepanel_Opened)
                     {

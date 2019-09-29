@@ -6,11 +6,35 @@ using System.Threading.Tasks;
 
 namespace TensorGram.Layers
 {
-    public class Add :Layer
+    public class Add : Layer
     {
+        public Add()
+        {
+            this.Type = LayerTypes.Add;
+        }
+
         public override void GraphicsNodeInitialize()
         {
+            this.GraphicsNode.NodeByType(Enum.GetName(typeof(LayerTypes), this.Type));
             base.GraphicsNodeInitialize();
+        }
+
+        public override void ReadAttribute(string _input)
+        {
+            try
+            {
+                int StartIndex;
+                int EndIndex;
+
+                // Doc ten layer
+                StartIndex = _input.IndexOf("name='") + 6;
+                EndIndex = _input.LastIndexOf("'");
+                this.LayerName = _input.Substring(StartIndex, EndIndex - StartIndex);
+            }
+            catch
+            {
+
+            }
         }
     }
 }

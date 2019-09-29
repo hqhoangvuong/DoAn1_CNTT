@@ -103,7 +103,7 @@ namespace TensorGram
                 case "AvgPool2D":
                     return new AvgPool2D();
                 case "Add":
-                    break;
+                    return new Add();
             }
 
             return new Layer();
