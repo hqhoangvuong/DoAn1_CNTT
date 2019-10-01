@@ -169,7 +169,7 @@ namespace TensorGram.GraphicsObject
 
         private void MainGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            SlidePanel_Control.SlidePanel_Show(this.LayerName);
+            SlidePanel_Control.SlidePanel_Show(this.LayerName, SlidePanel_Mode.LayerPropeties);
         }
     }
 }

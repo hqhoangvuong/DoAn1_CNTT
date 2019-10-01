@@ -43,7 +43,7 @@ namespace TensorGram
                 ViewCenter();
 
                 // Nap du lieu slidePanel_Control
-                SlidePanel_Control.Init_SlidePanel_Control(SlideMenu_StackPanel, SlidePanel_TextBlock, Resources["ShowMenu"] as Storyboard, this.Model.Layers);
+                SlidePanel_Control.Init_SlidePanel_Control(SlideMenu_StackPanel, SlidePanel_TextBlock, Resources["ShowMenu"] as Storyboard, SlidePanel_lvListLayers, SlidePanel_txtBoxFind, this.Model.Layers);
             }
         }
 
@@ -57,6 +57,16 @@ namespace TensorGram
             Storyboard sb = Resources["HideMenu"] as Storyboard;
             sb.Begin(SlideMenu_StackPanel);
             SlidePanel_Control.Slidepanel_Opened = false;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MenuItem_Find_Click(object sender, RoutedEventArgs e)
+        {
+            SlidePanel_Control.SlidePanel_Show("", SlidePanel_Mode.LayerFind);
         }
     }
 }

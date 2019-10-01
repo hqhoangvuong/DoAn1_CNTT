@@ -42,13 +42,23 @@
             </RichTextBox>
             <Button x:Name="bntExec" Padding="0" Height="53" BorderBrush="{x:Null}" Content="Execute" FontSize="36" Click="BntExec_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         </StackPanel>
-        
+
         <StackPanel Grid.Column="1" Panel.ZIndex="2" Name="SlideMenu_StackPanel" Orientation="Horizontal" Width="250" HorizontalAlignment="Right" Margin="0,18,-250,0">
             <Border BorderBrush="#FF343434" BorderThickness="1" Width="250" Background="#FF343434">
                 <Grid Margin="0,0,0,-1">
                     <Button x:Name="bntHide" Click="bntHide_Click" Content="✕" Visibility="Visible" Margin="198,3,0,0" FontSize="18" Width="40" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="SlidePanel_TextBlock" Margin="10,45,10,65" TextWrapping="Wrap" Foreground="White" FontSize="18"/>
-                    <Label Content="NODE PROPERTIES" HorizontalAlignment="Left" Margin="4.706,5.736,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White"/>
+                    <TextBlock x:Name="SlidePanel_TextBlock" Margin="10,45,10,10" TextWrapping="Wrap" Foreground="White" FontSize="18"/>
+                    <Label x:Name="SlidePanel_Title" Content="NODE PROPERTIES" HorizontalAlignment="Left" Margin="4.706,5.736,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White"/>
+
+                    <ListView x:Name="SlidePanel_lvListLayers" HorizontalAlignment="Left" Height="605" VerticalAlignment="Top" Width="228" Margin="10,67,0,0" Visibility="Hidden" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name" Width="114" DisplayMemberBinding="{Binding Name}" />
+                                <GridViewColumn Header="Type" Width="114" DisplayMemberBinding="{Binding Type}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <TextBox x:Name="SlidePanel_txtBoxFind" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="10,45,10,0" Height="17" Visibility="Hidden" Foreground="White"/>
                 </Grid>
             </Border>
         </StackPanel>
@@ -58,26 +68,21 @@
                 <Canvas x:Name="MainCanvas" Background="#FF414141" Height="5000" HorizontalAlignment="Center" Width="5000" Margin="-2500,0,-2500,-4300" VerticalAlignment="Top"/>
             </Grid>
         </ScrollViewer>
-        
+
         <Menu Grid.ColumnSpan="2" Height="18" VerticalAlignment="Top" Background="#FF292A2D" Foreground="White">
-            <MenuItem Header="_File" Background="{x:Null}">
-                <MenuItem Header="_Open" Background="#FF292A2D" Foreground="White" BorderBrush="#FF292A2D" />
-                <MenuItem Header="_Export" Background="#FF292A2D" Foreground="White" BorderBrush="#FF292A2D" />
-                <MenuItem Header="_Save" Background="#FF292A2D" Foreground="White" BorderBrush="#FF292A2D" />
+            <MenuItem Header="_File" Foreground="White">
+                <MenuItem Header="_Open" Foreground="Black" />
+                <MenuItem Header="_Export" Foreground="Black" />
                 <Separator />
-                <MenuItem Header="_Exit" Background="#FF292A2D" Foreground="White" />
+                <MenuItem Header="_Exit" Foreground="Black" Click="MenuItem_Click" />
             </MenuItem>
-            
-            <MenuItem Header="Edit">
-                
+
+            <MenuItem Header="View" Foreground="White">
+                <MenuItem Header="_Find" Foreground="Black" Click="MenuItem_Find_Click" />
             </MenuItem>
-            
-            <MenuItem Header="View">
-                
-            </MenuItem>
-            
-            <MenuItem Header="Help">
-                
+
+            <MenuItem Header="Help" Foreground="White">
+
             </MenuItem>
         </Menu>
     </Grid>
