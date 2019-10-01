@@ -21,7 +21,6 @@
                                 Storyboard.TargetProperty="StrokeThickness"
                                 To="4"
                                 Duration="0:0:0.25" />
-            <!-- If you want to run counter-clockwise, just swap the 'From' and 'To' values. -->
             <DoubleAnimation BeginTime="00:00:00" RepeatBehavior="Forever" Storyboard.TargetName="AlertBox" Storyboard.TargetProperty="StrokeDashOffset" 
                                 Duration="0:3:0" From="1000" To="0"/>
         </Storyboard>
@@ -33,35 +32,54 @@
             <ColumnDefinition Width="443*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" Background="#FF05B405">
-            <RichTextBox x:Name="txtCodeInput" Background="#FF2D2D2D" Foreground="White" FontSize="14" FontFamily="Consolas" Block.LineHeight="4" BorderBrush="Green" Height="634">
+        <StackPanel Grid.Column="0" Background="#FF05B405" Margin="0,18,0,0">
+            <RichTextBox x:Name="txtCodeInput" Background="#FF2D2D2D" Foreground="White" FontSize="14" FontFamily="Consolas" Block.LineHeight="4" Height="631" BorderBrush="#FF2D2D2D" SelectionBrush="{x:Null}">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text=""/>
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
-            <Button x:Name="bntExec" Padding="0" Height="67" BorderBrush="Green" Content="Execute" FontSize="36" Click="BntExec_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-
-            </Button>
-
+            <Button x:Name="bntExec" Padding="0" Height="53" BorderBrush="{x:Null}" Content="Execute" FontSize="36" Click="BntExec_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         </StackPanel>
-        <StackPanel Grid.Column="1" Panel.ZIndex="2" Name="SlideMenu_StackPanel" Orientation="Horizontal" Height="720" Width="250" HorizontalAlignment="Right" Margin="0,0,-250,0">
-            <Border BorderBrush="AliceBlue" BorderThickness="1" Width="250" Height="720" Background="#FF343434">
-                <Grid>
-                    <Button x:Name="bntHide" Click="bntHide_Click" Content="✕" Visibility="Visible" Margin="198,2.706,10,675.294" FontSize="18" Width="40" Height="40" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"/>
+        
+        <StackPanel Grid.Column="1" Panel.ZIndex="2" Name="SlideMenu_StackPanel" Orientation="Horizontal" Width="250" HorizontalAlignment="Right" Margin="0,18,-250,0">
+            <Border BorderBrush="#FF343434" BorderThickness="1" Width="250" Background="#FF343434">
+                <Grid Margin="0,0,0,-1">
+                    <Button x:Name="bntHide" Click="bntHide_Click" Content="✕" Visibility="Visible" Margin="198,3,0,0" FontSize="18" Width="40" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top"/>
                     <TextBlock x:Name="SlidePanel_TextBlock" Margin="10,45,10,65" TextWrapping="Wrap" Foreground="White" FontSize="18"/>
                     <Label Content="NODE PROPERTIES" HorizontalAlignment="Left" Margin="4.706,5.736,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White"/>
-
                 </Grid>
             </Border>
         </StackPanel>
 
-        <ScrollViewer x:Name="MainScrollViewer" Grid.Column="1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
+        <ScrollViewer x:Name="MainScrollViewer" Grid.Column="1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Margin="0,18,0,0">
             <Grid Name="GridWorkspace" Height="5000" Width="5000">
                 <Canvas x:Name="MainCanvas" Background="#FF414141" Height="5000" HorizontalAlignment="Center" Width="5000" Margin="-2500,0,-2500,-4300" VerticalAlignment="Top"/>
             </Grid>
         </ScrollViewer>
+        
+        <Menu Grid.ColumnSpan="2" Height="18" VerticalAlignment="Top" Background="#FF292A2D" Foreground="White">
+            <MenuItem Header="_File" Background="{x:Null}">
+                <MenuItem Header="_Open" Background="#FF292A2D" Foreground="White" BorderBrush="#FF292A2D" />
+                <MenuItem Header="_Export" Background="#FF292A2D" Foreground="White" BorderBrush="#FF292A2D" />
+                <MenuItem Header="_Save" Background="#FF292A2D" Foreground="White" BorderBrush="#FF292A2D" />
+                <Separator />
+                <MenuItem Header="_Exit" Background="#FF292A2D" Foreground="White" />
+            </MenuItem>
+            
+            <MenuItem Header="Edit">
+                
+            </MenuItem>
+            
+            <MenuItem Header="View">
+                
+            </MenuItem>
+            
+            <MenuItem Header="Help">
+                
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>
 
