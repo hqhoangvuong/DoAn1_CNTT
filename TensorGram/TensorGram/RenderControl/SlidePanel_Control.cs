@@ -32,6 +32,7 @@ namespace TensorGram.RenderControl
         public static ListView RenderControl_SlidePanel_ListView;
         public static TextBox RenderControl_SlidePanel_Textbox;
         public static List<Layer> RenderControl_ModelLayersData;
+        public static bool isLayerHighlighted;
         public static bool Slidepanel_Opened;
         public static void Init_SlidePanel_Control(StackPanel pn, TextBlock tb, Storyboard sb, ListView lv, TextBox tbx, List<Layer> layers)
         {
@@ -42,6 +43,7 @@ namespace TensorGram.RenderControl
             RenderControl_SlidePanel_Textbox = tbx;
             RenderControl_ModelLayersData = layers;
             Slidepanel_Opened = false;
+            isLayerHighlighted = false;
         }
 
         public static void SlidePanel_Show(string namelayer, SlidePanel_Mode displayMode)

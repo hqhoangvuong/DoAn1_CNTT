@@ -14,6 +14,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TensorGram.RenderControl;
+using TensorGram.Layers;
 namespace TensorGram
 {
     /// <summary>
@@ -67,6 +68,34 @@ namespace TensorGram
         private void MenuItem_Find_Click(object sender, RoutedEventArgs e)
         {
             SlidePanel_Control.SlidePanel_Show("", SlidePanel_Mode.LayerFind);
+        }
+
+        private void SlidePanel_txtBoxFind_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            List<Listview_Data> data = new List<Listview_Data>();
+
+            // Xoá chọn layer
+            if (SlidePanel_Control.isLayerHighlighted)
+            {
+
+            }
+
+            foreach (Layer _layer in Model.Layers)
+            {
+                SlidePanel_lvListLayers.ItemsSource = null;
+                if (_layer.LayerName.Contains(SlidePanel_txtBoxFind.Text))
+                {
+                    data.Add(new Listview_Data() { Type = Enum.GetName(typeof(LayerTypes), _layer.Type), Name = _layer.LayerName });
+                }
+                SlidePanel_lvListLayers.ItemsSource = data;
+            }
+        }
+
+        private void SlidePanel_txtBoxFind_TextInput(object sender, TextCompositionEventArgs e)
+        {
+
+
+
         }
     }
 }

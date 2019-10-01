@@ -58,7 +58,7 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <TextBox x:Name="SlidePanel_txtBoxFind" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="10,45,10,0" Height="17" Visibility="Hidden" Foreground="White"/>
+                    <TextBox x:Name="SlidePanel_txtBoxFind" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,45,10,0" Height="17" Visibility="Hidden" Foreground="White" TextChanged="SlidePanel_txtBoxFind_TextChanged" TextInput="SlidePanel_txtBoxFind_TextInput" Background="{x:Null}"/>
                 </Grid>
             </Border>
         </StackPanel>
