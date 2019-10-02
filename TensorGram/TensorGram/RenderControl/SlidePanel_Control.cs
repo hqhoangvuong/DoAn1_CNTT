@@ -22,6 +22,13 @@ namespace TensorGram.RenderControl
     {
         public string Type { get; set; }
         public string Name { get; set; }
+
+        public override string ToString()
+        {
+            //your formatted output string here
+            //Example
+            return Name;
+        }
     }
 
     public static class SlidePanel_Control

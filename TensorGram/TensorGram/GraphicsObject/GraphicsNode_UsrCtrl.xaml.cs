@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -25,6 +26,7 @@ namespace TensorGram.GraphicsObject
         public AnchorPoint AnchorPoint;
         public string NodeType;
 
+        public bool isHighlighted;
         public string CurrentTitleColor;
         public string CurrentAttributeColor;
 
@@ -37,6 +39,7 @@ namespace TensorGram.GraphicsObject
             this.CurrentTitleColor = "#30302F";
             this.CurrentAttributeColor = "#2D2D2D";
             this.maxLength = txtblockPropety.Width;
+            this.isHighlighted = false;
             ApplyColor();
         }
 
@@ -47,6 +50,7 @@ namespace TensorGram.GraphicsObject
             this.CurrentTitleColor = "#30302F";
             this.CurrentAttributeColor = "#2D2D2D";
             this.maxLength = txtblockPropety.Width;
+            this.isHighlighted = false;
             ApplyColor();
         }
 
@@ -170,6 +174,24 @@ namespace TensorGram.GraphicsObject
         private void MainGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             SlidePanel_Control.SlidePanel_Show(this.LayerName, SlidePanel_Mode.LayerPropeties);
+        }
+
+        public void Highlight()
+        {
+            this.AlertBox.Visibility = System.Windows.Visibility.Visible;
+            Storyboard sb = Resources["MarchingAnts"] as Storyboard;
+            sb.RepeatBehavior = RepeatBehavior.Forever;
+            sb.Begin(this.AlertBox);
+            this.isHighlighted = true;
+        }
+
+        public void DeHighlight()
+        {
+            this.AlertBox.Visibility = System.Windows.Visibility.Hidden;
+            Storyboard sb = Resources["MarchingAnts"] as Storyboard;
+            sb.RepeatBehavior = new RepeatBehavior(0);
+            sb.Begin(this.AlertBox);
+            this.isHighlighted = false;
         }
     }
 }

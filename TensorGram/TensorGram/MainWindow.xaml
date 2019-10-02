@@ -33,7 +33,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Background="#FF05B405" Margin="0,18,0,0">
-            <RichTextBox x:Name="txtCodeInput" Background="#FF2D2D2D" Foreground="White" FontSize="14" FontFamily="Consolas" Block.LineHeight="4" Height="631" BorderBrush="#FF2D2D2D" SelectionBrush="{x:Null}">
+            <RichTextBox x:Name="txtCodeInput" Background="#FF2D2D2D" Foreground="White" FontFamily="Consolas" Block.LineHeight="4" Height="631" BorderBrush="#FF2D2D2D" SelectionBrush="{x:Null}">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text=""/>
@@ -50,7 +50,7 @@
                     <TextBlock x:Name="SlidePanel_TextBlock" Margin="10,45,10,10" TextWrapping="Wrap" Foreground="White" FontSize="18"/>
                     <Label x:Name="SlidePanel_Title" Content="NODE PROPERTIES" HorizontalAlignment="Left" Margin="4.706,5.736,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White"/>
 
-                    <ListView x:Name="SlidePanel_lvListLayers" HorizontalAlignment="Left" Height="605" VerticalAlignment="Top" Width="228" Margin="10,67,0,0" Visibility="Hidden" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}">
+                    <ListView x:Name="SlidePanel_lvListLayers" HorizontalAlignment="Left" Height="605" VerticalAlignment="Top" Width="228" Margin="10,67,0,0" Visibility="Hidden" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" SelectionChanged="SlidePanel_lvListLayers_SelectionChanged">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Name" Width="114" DisplayMemberBinding="{Binding Name}" />
@@ -63,9 +63,9 @@
             </Border>
         </StackPanel>
 
-        <ScrollViewer x:Name="MainScrollViewer" Grid.Column="1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Margin="0,18,0,0">
+        <ScrollViewer x:Name="MainScrollViewer" Grid.Column="1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Margin="0,18,0,0" MouseLeftButtonDown="MainScrollViewer_MouseLeftButtonDown" PreviewMouseMove="MainScrollViewer_PreviewMouseMove" PreviewMouseLeftButtonUp="MainScrollViewer_PreviewMouseLeftButtonUp" PreviewMouseLeftButtonDown="MainScrollViewer_PreviewMouseLeftButtonDown" PreviewMouseWheel="MainScrollViewer_PreviewMouseWheel">
             <Grid Name="GridWorkspace" Height="5000" Width="5000">
-                <Canvas x:Name="MainCanvas" Background="#FF414141" Height="5000" HorizontalAlignment="Center" Width="5000" Margin="-2500,0,-2500,-4300" VerticalAlignment="Top"/>
+                <Canvas x:Name="MainCanvas" Background="#FF414141" Height="5000" HorizontalAlignment="Center" Width="5000" Margin="-2500,0,-2500,-4300" VerticalAlignment="Top" MouseLeftButtonDown="MainCanvas_MouseLeftButtonDown"/>
             </Grid>
         </ScrollViewer>
 
@@ -85,6 +85,8 @@
 
             </MenuItem>
         </Menu>
+        <Rectangle Name="Toolbar" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="10,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="82" StrokeThickness="0.5"/>
+
     </Grid>
 </Window>
 

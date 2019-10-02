@@ -5,6 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TensorGram.GraphicsObject"
              mc:Ignorable="d" Height="54.667" Width="221">
+
+    <UserControl.Resources>
+        <Storyboard x:Key="MarchingAnts">
+            <DoubleAnimation BeginTime="00:00:00"
+                                Storyboard.TargetProperty="StrokeThickness"
+                                To="2"
+                                Duration="0:0:.25" />
+            <DoubleAnimation BeginTime="00:00:00" RepeatBehavior="Forever" Storyboard.TargetName="AlertBox" Storyboard.TargetProperty="StrokeDashOffset" 
+                                Duration="0:3:0" From="1000" To="0"/>
+        </Storyboard>
+    </UserControl.Resources>
+    
     <Grid Name="MainGrid" MouseLeftButtonDown="MainGrid_MouseLeftButtonDown">
         <Grid.RowDefinitions>
             <RowDefinition Height="29"/>
@@ -20,5 +32,12 @@
                 <TextBlock x:Name="txtblockPropety" Margin="8,0" LineHeight="3" FontSize="18" Foreground="White"/>
             </Border>
         </Grid>
+
+        <Rectangle x:Name="AlertBox"
+                      Stroke="White" 
+                       StrokeDashOffset="10" StrokeDashArray="3" Grid.RowSpan="2"
+                       RadiusX="10"
+                       RadiusY="10"
+                   Visibility="Hidden"/>
     </Grid>
 </UserControl>

@@ -58,6 +58,15 @@ namespace TensorGram
             Storyboard sb = Resources["HideMenu"] as Storyboard;
             sb.Begin(SlideMenu_StackPanel);
             SlidePanel_Control.Slidepanel_Opened = false;
+
+            // Xoá chọn layer
+            if (SlidePanel_Control.isLayerHighlighted)
+            {
+                foreach (Layer _layer in Model.Layers)
+                    if (_layer.GraphicsNode.isHighlighted)
+                        _layer.GraphicsNode.DeHighlight();
+                SlidePanel_Control.isLayerHighlighted = false;
+            }
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -77,7 +86,10 @@ namespace TensorGram
             // Xoá chọn layer
             if (SlidePanel_Control.isLayerHighlighted)
             {
-
+                foreach (Layer _layer in Model.Layers)
+                    if (_layer.GraphicsNode.isHighlighted)
+                        _layer.GraphicsNode.DeHighlight();
+                SlidePanel_Control.isLayerHighlighted = false;
             }
 
             foreach (Layer _layer in Model.Layers)
@@ -95,6 +107,67 @@ namespace TensorGram
         {
 
 
+
+        }
+
+        private void SlidePanel_lvListLayers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                foreach(Layer _layer in Model.Layers)
+                {
+                    if (_layer.LayerName == e.AddedItems[0].ToString())
+                    {
+                        _layer.GraphicsNode.Highlight();
+                        SlidePanel_Control.isLayerHighlighted = true;
+                    }
+                }
+            }
+        }
+
+        private void MainCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        // Mouse Drag
+        Point scrollMousePoint = new System.Windows.Point();
+        double hOff = 1;
+        double vOff = 1;
+
+        private void MainScrollViewer_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void MainScrollViewer_PreviewMouseMove(object sender, MouseEventArgs e)
+        {
+            if (MainScrollViewer.IsMouseCaptured)
+            {
+                MainScrollViewer.ScrollToHorizontalOffset(hOff + (scrollMousePoint.X - e.GetPosition(MainScrollViewer).X));
+                MainScrollViewer.ScrollToVerticalOffset(vOff + (scrollMousePoint.Y - e.GetPosition(MainScrollViewer).Y));
+            }
+        }
+
+        private void MainScrollViewer_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            MainScrollViewer.ReleaseMouseCapture();
+        }
+
+        private void MainScrollViewer_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (false)
+            {
+                MainScrollViewer.CaptureMouse();
+                scrollMousePoint = e.GetPosition(MainScrollViewer);
+                hOff = MainScrollViewer.HorizontalOffset;
+                vOff = MainScrollViewer.VerticalOffset;
+            }
+        }
+
+        private void MainScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            
 
         }
     }
