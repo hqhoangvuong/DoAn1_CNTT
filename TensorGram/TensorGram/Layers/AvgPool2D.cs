@@ -133,5 +133,21 @@ namespace TensorGram.Layers
             GraphicsNode.txtPropety_AddLine(temp1);
             base.GraphicsNodeInitialize();
         }
+
+        public override List<string> ToString()
+        {
+            base.ToString();
+            ReturnListToString.Add("\nAttributes");
+            ReturnListToString.Add("     strides(" + string.Join(", ", strides) + ")");
+            ReturnListToString.Add("     padding: " + this.padding.ToString());
+            ReturnListToString.Add("     data format: " + this.data_format);
+            ReturnListToString.Add("\nInputs");
+            ReturnListToString.Add("     pool_size(" + string.Join(", ", pool_size) + ")");
+            foreach (string i in this.Inboundlayer)
+                ReturnListToString.Add("     " + i);
+            ReturnListToString.Add("\nOutputs");
+            ReturnListToString.Add("     " + this.OutboundLayer);
+            return ReturnListToString;
+        }
     }
 }

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TensorGram.App" Collapsed="true">
+    <Position X="19" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAASggAAAQIAAAAoAhCAAgAAFACAAQAAAAgAAAAQABA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TensorGram.TensorModel" Collapsed="true">
+    <Position X="19" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAAA=</HashCode>
+      <FileName>TensorModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.TextInput_Hander" Collapsed="true">
+    <Position X="20.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAEgAAIAAAAAAAAAA=</HashCode>
+      <FileName>TextInput_Hander.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.GraphicsObject.AnchorPoint" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAACACAAAAAAAA=</HashCode>
+      <FileName>GraphicsObject\AnchorPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.GraphicsObject.Point" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>GraphicsObject\AnchorPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.GraphicsObject.Arrow" Collapsed="true">
+    <Position X="20.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAgAAAAA=</HashCode>
+      <FileName>GraphicsObject\Arrow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.GraphicsObject.GraphicsNode_UsrCtrl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAABCAAAAAAIABEAQAAAQACIoAAAFAABAABAABAABA=</HashCode>
+      <FileName>GraphicsObject\GraphicsNode_UsrCtrl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TensorGram.Layers.Add" Collapsed="true">
+    <Position X="10.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAABAAAAAAAAAA=</HashCode>
+      <FileName>Layers\Add.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Layers.AvgPool2D" Collapsed="true">
+    <Position X="14.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAACAAAAgAAAAAAAAAQAABAAAAAACAAA=</HashCode>
+      <FileName>Layers\AvgPool2D.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Layers.Layer" Collapsed="true">
+    <Position X="11.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAACQCRAAgAEAAACgAAAAAAAARIABQAAAAAAAAA=</HashCode>
+      <FileName>Layers\Topology\Layer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TensorGram.Layers.Topology.Conv2D" Collapsed="true">
+    <Position X="8" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAEAAAAEAAAAAAAAQAABAAAABAAAAA=</HashCode>
+      <FileName>Layers\Conv2D.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Layers.Topology.InputLayer" Collapsed="true">
+    <Position X="12.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layers\Topology\InputLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Properties.Resources" Collapsed="true">
+    <Position X="20.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Properties.Settings" Collapsed="true">
+    <Position X="22.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.RenderControl.ConnectorRender_Control" Collapsed="true">
+    <Position X="22.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAACAQAAAAAAAAAAAAAAAEAAgAAAAAAIA=</HashCode>
+      <FileName>RenderControl\ConnectorRender_Control.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.RenderControl.LayerRender_Control" Collapsed="true">
+    <Position X="19" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RenderControl\LayerRender_Control.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.RenderControl.Render_MasterControl" Collapsed="true">
+    <Position X="19" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAABAAAACAAAIAAAAAAQAAAAAAAAgAAAQAAAA=</HashCode>
+      <FileName>RenderControl\Render_MasterControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.RenderControl.Listview_Data" Collapsed="true">
+    <Position X="20.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAQAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>RenderControl\SlidePanel_Control.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.RenderControl.SlidePanel_Control" Collapsed="true">
+    <Position X="17.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAECABBAAAAAAAAAACAQAAAIQAAAQQAAAAAAAA=</HashCode>
+      <FileName>RenderControl\SlidePanel_Control.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="TensorGram.Layers.LayerTypes" Collapsed="true">
+    <Position X="17.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIAIACAAAAAAAAAAAAAAAgIAAAAAABEAAEAACAREAA=</HashCode>
+      <FileName>Layers\Topology\Layer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TensorGram.RenderControl.SlidePanel_Mode" Collapsed="true">
+    <Position X="19" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>RenderControl\SlidePanel_Control.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

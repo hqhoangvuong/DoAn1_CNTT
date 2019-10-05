@@ -45,6 +45,7 @@ namespace TensorGram
 
                 // Nap du lieu slidePanel_Control
                 SlidePanel_Control.Init_SlidePanel_Control(SlideMenu_StackPanel, SlidePanel_TextBlock, Resources["ShowMenu"] as Storyboard, SlidePanel_lvListLayers, SlidePanel_txtBoxFind, this.Model.Layers);
+                this.StartupLogo.Visibility = System.Windows.Visibility.Hidden;
             }
         }
 

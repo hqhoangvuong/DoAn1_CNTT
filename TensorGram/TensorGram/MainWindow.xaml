@@ -24,6 +24,12 @@
             <DoubleAnimation BeginTime="00:00:00" RepeatBehavior="Forever" Storyboard.TargetName="AlertBox" Storyboard.TargetProperty="StrokeDashOffset" 
                                 Duration="0:3:0" From="1000" To="0"/>
         </Storyboard>
+
+        <Style TargetType="Image">
+            <Setter Property="Height" Value="64" />
+            <Setter Property="Width" Value="64" />
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality" />
+        </Style>
     </Window.Resources>
 
     <Grid>
@@ -40,7 +46,7 @@
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
-            <Button x:Name="bntExec" Padding="0" Height="53" BorderBrush="{x:Null}" Content="Execute" FontSize="36" Click="BntExec_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button x:Name="bntExec" Padding="0, 0, 0, 0" Height="53" BorderBrush="{x:Null}" Content="Execute" FontSize="36" Click="BntExec_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Panel.ZIndex="2" Name="SlideMenu_StackPanel" Orientation="Horizontal" Width="250" HorizontalAlignment="Right" Margin="0,18,-250,0">
@@ -85,7 +91,19 @@
 
             </MenuItem>
         </Menu>
-        <Rectangle Name="Toolbar" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="10,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="82" StrokeThickness="0.5"/>
+        <Rectangle Name="Toolbar" Grid.Column="1" HorizontalAlignment="Right" Height="25" Margin="0,0,676,643" VerticalAlignment="Bottom" Width="200" StrokeThickness="0.5"/>
+        <Rectangle x:Name="MoveTool" Width="25" Height="25" Grid.Column="1" Margin="10,33,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\Resources\hand_reasele-01.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle x:Name="StartupLogo" Grid.Column="1" Margin="198,104,188,97" StrokeThickness="0.5">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\Resources\Logo-01.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
 
     </Grid>
 </Window>
