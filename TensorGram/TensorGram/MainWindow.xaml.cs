@@ -157,7 +157,7 @@ namespace TensorGram
 
         private void MainScrollViewer_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (false)
+            if (true)
             {
                 MainScrollViewer.CaptureMouse();
                 scrollMousePoint = e.GetPosition(MainScrollViewer);

@@ -61,9 +61,17 @@
     <Compile Include="GraphicsObject\GraphicsNode_UsrCtrl.xaml.cs">
       <DependentUpon>GraphicsNode_UsrCtrl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Layers\Activation.cs" />
     <Compile Include="Layers\Add.cs" />
+    <Compile Include="Layers\Average.cs" />
     <Compile Include="Layers\AvgPool2D.cs" />
+    <Compile Include="Layers\BatchNormalization.cs" />
+    <Compile Include="Layers\Concatenate.cs" />
     <Compile Include="Layers\Conv2D.cs" />
+    <Compile Include="Layers\Dense.cs" />
+    <Compile Include="Layers\Dropout.cs" />
+    <Compile Include="Layers\MaxPool2D.cs" />
+    <Compile Include="Layers\Softmax.cs" />
     <Compile Include="Layers\Topology\InputLayer.cs" />
     <Compile Include="Layers\Topology\Layer.cs" />
     <Compile Include="RenderControl\ConnectorRender_Control.cs" />
@@ -72,6 +80,8 @@
     <Compile Include="RenderControl\SlidePanel_Control.cs" />
     <Compile Include="TensorModel.cs" />
     <Compile Include="TextInput_Hander.cs" />
+    <Compile Include="Tree\GenericHelpers.cs" />
+    <Compile Include="Tree\TreeNode.cs" />
     <Page Include="GraphicsObject\GraphicsNode_UsrCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
