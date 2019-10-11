@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TensorGram.Layers.Activation" Collapsed="true">
+    <Position X="24.75" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="TensorGram.Layers.Layer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="1.375" />
+        <Point X="25.5" Y="1.375" />
+        <Point X="25.5" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layers\Activation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Layers.Add">
+    <Position X="20.75" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="TensorGram.Layers.Layer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="1.375" />
+        <Point X="21.5" Y="1.375" />
+        <Point X="21.5" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAABAAAAAAAAAA=</HashCode>
+      <FileName>Layers\Add.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Layers.Average" Collapsed="true">
+    <Position X="18.75" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="TensorGram.Layers.Layer" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="14.25" Y="3.875" />
+        <Point X="19.5" Y="3.875" />
+        <Point X="19.5" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layers\Average.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Layers.AvgPool2D">
+    <Position X="22.75" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="TensorGram.Layers.Layer" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="14.25" Y="3.875" />
+        <Point X="23.5" Y="3.875" />
+        <Point X="23.5" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAACEAAAgAAAAAAAAAQAABAAAAAACAAA=</HashCode>
+      <FileName>Layers\AvgPool2D.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Layers.BatchNormalization" Collapsed="true">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="TensorGram.Layers.Layer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="1.375" />
+        <Point X="15.5" Y="1.375" />
+        <Point X="15.5" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layers\BatchNormalization.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Layers.Concatenate" Collapsed="true">
+    <Position X="22.75" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="TensorGram.Layers.Layer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="1.375" />
+        <Point X="23.5" Y="1.375" />
+        <Point X="23.5" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layers\Concatenate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Layers.Dense" Collapsed="true">
+    <Position X="20.75" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="TensorGram.Layers.Layer" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="14.25" Y="3.875" />
+        <Point X="21.5" Y="3.875" />
+        <Point X="21.5" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layers\Dense.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Layers.Dropout" Collapsed="true">
+    <Position X="24.75" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="TensorGram.Layers.Layer" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="14.25" Y="3.875" />
+        <Point X="25.5" Y="3.875" />
+        <Point X="25.5" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layers\Dropout.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Layers.MaxPool2D" Collapsed="true">
+    <Position X="16.75" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="TensorGram.Layers.Layer" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="1.375" />
+        <Point X="17.5" Y="1.375" />
+        <Point X="17.5" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layers\MaxPool2D.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Layers.Softmax" Collapsed="true">
+    <Position X="14.75" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="TensorGram.Layers.Layer" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="14.25" Y="3.875" />
+        <Point X="15.5" Y="3.875" />
+        <Point X="15.5" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layers\Softmax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Layers.Layer">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAACQCRAAgAEAAACgAAAAAAAARIABQAAAAAAAAA=</HashCode>
+      <FileName>Layers\Topology\Layer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TensorGram.Layers.Topology.Conv2D" Collapsed="true">
+    <Position X="18.75" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="TensorGram.Layers.Layer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="1.375" />
+        <Point X="19.5" Y="1.375" />
+        <Point X="19.5" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAEAAAAEAAAAAAAAQAABAAAABAAAAA=</HashCode>
+      <FileName>Layers\Conv2D.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TensorGram.Layers.Topology.InputLayer">
+    <Position X="16.75" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="TensorGram.Layers.Layer" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="14.25" Y="3.875" />
+        <Point X="17.5" Y="3.875" />
+        <Point X="17.5" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layers\Topology\InputLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="TensorGram.Layers.LayerTypes">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIAIACAAAAAAAAAAAAAAAgIAAAAAABEAAEAACAREAA=</HashCode>
+      <FileName>Layers\Topology\Layer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
