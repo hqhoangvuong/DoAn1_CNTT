@@ -113,11 +113,10 @@ namespace TensorGram.Layers
 
         }
 
-        [Obsolete]
         public override void GraphicsNodeInitialize()
         {
+            base.GraphicsNodeInitialize();
             string temp1 = "";
-            this.GraphicsNode.NodeByType(Enum.GetName(typeof(LayerTypes), this.Type));
             temp1 = "pool_size = (";
             foreach (int i in pool_size)
                 temp1 += i.ToString() + ", ";
@@ -131,7 +130,6 @@ namespace TensorGram.Layers
             temp1 = temp1.Remove(temp1.LastIndexOf(", "));
             temp1 += ")";
             GraphicsNode.txtPropety_AddLine(temp1);
-            base.GraphicsNodeInitialize();
         }
 
         public override List<string> ToString()
@@ -141,12 +139,6 @@ namespace TensorGram.Layers
             ReturnListToString.Add("     strides(" + string.Join(", ", strides) + ")");
             ReturnListToString.Add("     padding: " + this.padding.ToString());
             ReturnListToString.Add("     data format: " + this.data_format);
-            ReturnListToString.Add("\nInputs");
-            ReturnListToString.Add("     pool_size(" + string.Join(", ", pool_size) + ")");
-            foreach (string i in this.Inboundlayer)
-                ReturnListToString.Add("     " + i);
-            ReturnListToString.Add("\nOutputs");
-            ReturnListToString.Add("     " + this.OutboundLayer);
             return ReturnListToString;
         }
     }

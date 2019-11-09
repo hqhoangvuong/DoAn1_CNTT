@@ -104,6 +104,18 @@ namespace TensorGram
                     return new AvgPool2D();
                 case "Add":
                     return new Add();
+                case "Activation":
+                    return new Activation();
+                case "Average":
+                    return new Average();
+                case "Softmax":
+                    return new Softmax();
+                case "Concatenate":
+                    return new Concatenate();
+                case "Dense":
+                    return new Dense();
+                case "BatchNormalization":
+                    return new BatchNormalization();
             }
 
             return new Layer();

@@ -166,6 +166,36 @@ namespace TensorGram.GraphicsObject
                     CurrentTitleColor = "#385037";
                     ApplyColor();
                     break;
+                case "Activation":
+                    txtTitle = "Activation";
+                    CurrentTitleColor = "#385037";
+                    ApplyColor();
+                    break;
+                case "BatchNormalization":
+                    txtTitle = "Batch Normalization";
+                    CurrentTitleColor = "#385037";
+                    ApplyColor();
+                    break;
+                case "Concatenate":
+                    txtTitle = "Concatenate";
+                    CurrentTitleColor = "#385037";
+                    ApplyColor();
+                    break;
+                case "Dense":
+                    txtTitle = "Dense";
+                    CurrentTitleColor = "#385037";
+                    ApplyColor();
+                    break;
+                case "Dropout":
+                    txtTitle = "Dropout";
+                    CurrentTitleColor = "#385037";
+                    ApplyColor();
+                    break;
+                case "Softmax":
+                    txtTitle = "Softmax";
+                    CurrentTitleColor = "#385037";
+                    ApplyColor();
+                    break;
                 default:
                     break;
             }

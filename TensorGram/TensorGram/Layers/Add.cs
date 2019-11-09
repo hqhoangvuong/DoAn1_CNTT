@@ -15,7 +15,6 @@ namespace TensorGram.Layers
 
         public override void GraphicsNodeInitialize()
         {
-            this.GraphicsNode.NodeByType(Enum.GetName(typeof(LayerTypes), this.Type));
             base.GraphicsNodeInitialize();
         }
 

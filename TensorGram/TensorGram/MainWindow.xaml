@@ -69,13 +69,18 @@
             </Border>
         </StackPanel>
 
-        <ScrollViewer x:Name="MainScrollViewer" Grid.Column="1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Margin="0,18,0,0" MouseLeftButtonDown="MainScrollViewer_MouseLeftButtonDown" PreviewMouseMove="MainScrollViewer_PreviewMouseMove" PreviewMouseLeftButtonUp="MainScrollViewer_PreviewMouseLeftButtonUp" PreviewMouseLeftButtonDown="MainScrollViewer_PreviewMouseLeftButtonDown" PreviewMouseWheel="MainScrollViewer_PreviewMouseWheel">
-            <Grid Name="GridWorkspace" Height="5000" Width="5000">
-                <Canvas x:Name="MainCanvas" Background="#FF414141" Height="5000" HorizontalAlignment="Center" Width="5000" Margin="-2500,0,-2500,-4300" VerticalAlignment="Top" MouseLeftButtonDown="MainCanvas_MouseLeftButtonDown"/>
+        <ScrollViewer x:Name="MainScrollViewer" Grid.Column="1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Margin="0,18,0,0">
+            <Grid Name="GridWorkspace" Height="5000" Width="5000" RenderTransformOrigin=".1, .1" >
+                <Grid.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform x:Name="scaleTransform"/>
+                    </TransformGroup>
+                </Grid.LayoutTransform>
+                <Canvas x:Name="MainCanvas" Background="#FF414141" Height="5000" HorizontalAlignment="Center" Width="5000" Margin="-2500,0,-2500,-4300" VerticalAlignment="Top"/>
             </Grid>
         </ScrollViewer>
 
-        <Menu Grid.ColumnSpan="2" Height="18" VerticalAlignment="Top" Background="#FF292A2D" Foreground="White">
+        <Menu Name="HeaderMenu" Grid.ColumnSpan="2" Height="18" VerticalAlignment="Top" Background="#FF292A2D" Foreground="White">
             <MenuItem Header="_File" Foreground="White">
                 <MenuItem Header="_Open" Foreground="Black" />
                 <MenuItem Header="_Export" Foreground="Black" />
@@ -91,20 +96,19 @@
 
             </MenuItem>
         </Menu>
-        <Rectangle Name="Toolbar" Grid.Column="1" HorizontalAlignment="Right" Height="25" Margin="0,0,676,643" VerticalAlignment="Bottom" Width="200" StrokeThickness="0.5"/>
-        <Rectangle x:Name="MoveTool" Width="25" Height="25" Grid.Column="1" Margin="10,33,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\Resources\hand_reasele-01.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
 
         <Rectangle x:Name="StartupLogo" Grid.Column="1" Margin="198,104,188,97" StrokeThickness="0.5">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\Resources\Logo-01.png"/>
             </Rectangle.Fill>
         </Rectangle>
+        <Grid Name="Grid_ToolBox" Grid.Column="1" Height="33" Margin="10,23,596,0" VerticalAlignment="Top" Visibility="Visible">
+            <Label x:Name="lbMove" Content="Move" Margin="1,0,0,0" FontSize="14" Foreground="White" Height="33" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" PreviewMouseDown="LbMove_PreviewMouseDown" MouseEnter="ToolBox_MouseEnter" MouseLeave="ToolBox_MouseLeave" MouseDown="ToolBox_MouseDown"/>
+            <Label x:Name="lbZoomIn" Content="Zoom in" Margin="51,0,0,0" FontSize="14" Foreground="White" Height="33" VerticalAlignment="Top" HorizontalAlignment="Left" Width="62" MouseLeave="ToolBox_MouseLeave" MouseEnter="ToolBox_MouseEnter" MouseDown="ToolBox_MouseDown"/>
+            <Label x:Name="lbZoomOut" Content="Zoom out" Margin="118,0,0,0" FontSize="14" Foreground="White" HorizontalAlignment="Left" Width="72" Height="33" VerticalAlignment="Top" MouseEnter="ToolBox_MouseEnter" MouseLeave="ToolBox_MouseLeave" MouseDown="ToolBox_MouseDown"/>
+            <Label x:Name="lbZoomRatio" Content="" Margin="195,0,0,0" FontSize="14" Foreground="White" HorizontalAlignment="Left" Width="72" Height="33" VerticalAlignment="Top"/>
 
-
+        </Grid>
     </Grid>
 </Window>
 

@@ -30,6 +30,14 @@ namespace TensorGram
         {
             InitializeComponent();
             this.Model = new TensorModel();
+
+            MainScrollViewer.ScrollChanged += OnScrollViewerScrollChanged;
+            MainScrollViewer.MouseLeftButtonUp += OnMouseLeftButtonUp;
+            MainScrollViewer.PreviewMouseLeftButtonUp += OnMouseLeftButtonUp;
+            MainScrollViewer.PreviewMouseLeftButtonDown += OnMouseLeftButtonDown;
+            MainScrollViewer.MouseMove += OnMouseMove;
+            this.Grid_ToolBox.Visibility = System.Windows.Visibility.Hidden;
+            lbZoomRatio.Content = "100%";
         }
 
         private void BntExec_Click(object sender, RoutedEventArgs e)
@@ -39,13 +47,21 @@ namespace TensorGram
                 return;
             else
             {
-                InputHander = new TextInput_Hander(temp, ref this.Model);
-                RenderHander = new Render_MasterControl(MainCanvas, this.Model);
-                ViewCenter();
+                //try
+                //{
+                    InputHander = new TextInput_Hander(temp, ref this.Model);
+                    RenderHander = new Render_MasterControl(MainCanvas, this.Model);
+                    ViewCenter();
 
-                // Nap du lieu slidePanel_Control
-                SlidePanel_Control.Init_SlidePanel_Control(SlideMenu_StackPanel, SlidePanel_TextBlock, Resources["ShowMenu"] as Storyboard, SlidePanel_lvListLayers, SlidePanel_txtBoxFind, this.Model.Layers);
-                this.StartupLogo.Visibility = System.Windows.Visibility.Hidden;
+                    // Nap du lieu slidePanel_Control
+                    SlidePanel_Control.Init_SlidePanel_Control(SlideMenu_StackPanel, SlidePanel_TextBlock, Resources["ShowMenu"] as Storyboard, SlidePanel_lvListLayers, SlidePanel_txtBoxFind, this.Model.Layers);
+                    this.StartupLogo.Visibility = System.Windows.Visibility.Hidden;
+                    this.Grid_ToolBox.Visibility = System.Windows.Visibility.Visible;
+               // }
+               // catch
+               // {
+               //    MessageBox.Show("An fatal error has been occured. Please check the input data and try again!", "System's Message", MessageBoxButton.OK, MessageBoxImage.Error);
+               // }
             }
         }
 
@@ -115,7 +131,7 @@ namespace TensorGram
         {
             if (e.AddedItems.Count > 0)
             {
-                foreach(Layer _layer in Model.Layers)
+                foreach (Layer _layer in Model.Layers)
                 {
                     if (_layer.LayerName == e.AddedItems[0].ToString())
                     {
@@ -126,50 +142,167 @@ namespace TensorGram
             }
         }
 
-        private void MainCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        #region Stuff For Mouse drag and Canvas Zoom
+
+        private Point? lastCenterPositionOnTarget;
+        private Point? lastMousePositionOnTarget;
+        private Point? lastDragPoint;
+        private bool isMoveMode = false;
+        private double Zoom = 1;
+        void OnMouseMove(object sender, MouseEventArgs e)
         {
-
-        }
-
-        // Mouse Drag
-        Point scrollMousePoint = new System.Windows.Point();
-        double hOff = 1;
-        double vOff = 1;
-
-        private void MainScrollViewer_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void MainScrollViewer_PreviewMouseMove(object sender, MouseEventArgs e)
-        {
-            if (MainScrollViewer.IsMouseCaptured)
+            if (lastDragPoint.HasValue)
             {
-                MainScrollViewer.ScrollToHorizontalOffset(hOff + (scrollMousePoint.X - e.GetPosition(MainScrollViewer).X));
-                MainScrollViewer.ScrollToVerticalOffset(vOff + (scrollMousePoint.Y - e.GetPosition(MainScrollViewer).Y));
+                Point posNow = e.GetPosition(MainScrollViewer);
+
+                double dX = posNow.X - lastDragPoint.Value.X;
+                double dY = posNow.Y - lastDragPoint.Value.Y;
+
+                lastDragPoint = posNow;
+
+                MainScrollViewer.ScrollToHorizontalOffset(MainScrollViewer.HorizontalOffset - dX);
+                MainScrollViewer.ScrollToVerticalOffset(MainScrollViewer.VerticalOffset - dY);
             }
         }
 
-        private void MainScrollViewer_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MainScrollViewer.ReleaseMouseCapture();
-        }
-
-        private void MainScrollViewer_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (true)
+            if (isMoveMode)
             {
-                MainScrollViewer.CaptureMouse();
-                scrollMousePoint = e.GetPosition(MainScrollViewer);
-                hOff = MainScrollViewer.HorizontalOffset;
-                vOff = MainScrollViewer.VerticalOffset;
+                var mousePos = e.GetPosition(MainScrollViewer);
+                if (mousePos.X <= MainScrollViewer.ViewportWidth && mousePos.Y < MainScrollViewer.ViewportHeight)
+                {
+                    MainScrollViewer.Cursor = Cursors.SizeAll;
+                    lastDragPoint = mousePos;
+                    Mouse.Capture(MainScrollViewer);
+                }
             }
         }
 
-        private void MainScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        void OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            
+            if (isMoveMode)
+            {
+                MainScrollViewer.Cursor = Cursors.Arrow;
+                MainScrollViewer.ReleaseMouseCapture();
+                lastDragPoint = null;
+            }
+        }
+
+        void OnScrollViewerScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            if (e.ExtentHeightChange != 0 || e.ExtentWidthChange != 0)
+            {
+                Point? targetBefore = null;
+                Point? targetNow = null;
+
+                if (!lastMousePositionOnTarget.HasValue)
+                {
+                    if (lastCenterPositionOnTarget.HasValue)
+                    {
+                        var centerOfViewport = new Point(MainScrollViewer.ViewportWidth / 2, MainScrollViewer.ViewportHeight / 2);
+                        Point centerOfTargetNow = MainScrollViewer.TranslatePoint(centerOfViewport, MainCanvas);
+
+                        targetBefore = lastCenterPositionOnTarget;
+                        targetNow = centerOfTargetNow;
+                    }
+                }
+                else
+                {
+                    targetBefore = lastMousePositionOnTarget;
+                    targetNow = Mouse.GetPosition(MainCanvas);
+
+                    lastMousePositionOnTarget = null;
+                }
+
+                if (targetBefore.HasValue)
+                {
+                    double dXInTargetPixels = targetNow.Value.X - targetBefore.Value.X;
+                    double dYInTargetPixels = targetNow.Value.Y - targetBefore.Value.Y;
+
+                    double multiplicatorX = e.ExtentWidth / MainCanvas.Width;
+                    double multiplicatorY = e.ExtentHeight / MainCanvas.Height;
+
+                    double newOffsetX = MainScrollViewer.HorizontalOffset - dXInTargetPixels * multiplicatorX;
+                    double newOffsetY = MainScrollViewer.VerticalOffset - dYInTargetPixels * multiplicatorY;
+
+                    if (double.IsNaN(newOffsetX) || double.IsNaN(newOffsetY))
+                    {
+                        return;
+                    }
+
+                    MainScrollViewer.ScrollToHorizontalOffset(newOffsetX);
+                    MainScrollViewer.ScrollToVerticalOffset(newOffsetY);
+                }
+            }
+        }
+
+        private void LbMove_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
 
         }
+
+        private void ToolBox_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Label lb = sender as Label;
+            lb.Foreground = Brushes.Green;
+            Grid_ToolBox.Cursor = Cursors.Hand;
+        }
+
+        private void ToolBox_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Label lb = sender as Label;
+            lb.Foreground = Brushes.White;
+
+            if (isMoveMode)
+                lbMove.Foreground = Brushes.Red;
+            Grid_ToolBox.Cursor = Cursors.Arrow;
+            if(!lbZoomOut.IsEnabled)
+                lb.Foreground = Brushes.Gray;
+        }
+
+        private void ToolBox_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Label lb = sender as Label;
+            switch (lb.Content)
+            {
+                case "Move":
+                    this.isMoveMode = !isMoveMode;
+                    break;
+                case "Zoom in":
+                    if (Zoom <= 2)
+                    {
+                        Zoom += .05;
+                        scaleTransform.ScaleX = Zoom;
+                        scaleTransform.ScaleY = Zoom;
+
+                        var centerOfViewport = new Point(MainScrollViewer.ViewportWidth / 2, MainScrollViewer.ViewportHeight / 2);
+                        lastCenterPositionOnTarget = MainScrollViewer.TranslatePoint(centerOfViewport, GridWorkspace);
+                        if (!lbZoomOut.IsEnabled)
+                        {
+                            lbZoomOut.IsEnabled = true;
+                            lbZoomOut.Foreground = Brushes.White;
+                        }
+                    }
+                    else
+                        lb.IsEnabled = false;
+                    break;
+                case "Zoom out":
+                    if (Zoom > 0.3)
+                    {
+                        Zoom -= .05;
+                        scaleTransform.ScaleX = Zoom;
+                        scaleTransform.ScaleY = Zoom;
+
+                        var centerOfViewport1 = new Point(MainScrollViewer.ViewportWidth / 2, MainScrollViewer.ViewportHeight / 2);
+                        lastCenterPositionOnTarget = MainScrollViewer.TranslatePoint(centerOfViewport1, GridWorkspace);
+                    }
+                    else
+                        lb.IsEnabled = false;
+                    break;
+            }
+            lbZoomRatio.Content = (Zoom * 100).ToString() + "%";
+        }
+        #endregion
     }
 }

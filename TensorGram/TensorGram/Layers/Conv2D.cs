@@ -65,13 +65,10 @@ namespace TensorGram.Layers.Topology
             }
         }
 
-        [Obsolete]
         public override void GraphicsNodeInitialize()
         {
-            this.GraphicsNode.NodeByType(Enum.GetName(typeof(LayerTypes), this.Type));
-
+            base.GraphicsNodeInitialize();
             GraphicsNode.txtPropety_AddLine("filter = " + filter);
-
             string temp1 = "";
             temp1 = "kernel_size = (";
             foreach (int i in kernel_size)
@@ -79,7 +76,6 @@ namespace TensorGram.Layers.Topology
             temp1 = temp1.Remove(temp1.LastIndexOf(", "));
             temp1 += ")";
             GraphicsNode.txtPropety_AddLine(temp1);
-            base.GraphicsNodeInitialize();
         }
 
         public override List<string> ToString()
@@ -88,12 +84,7 @@ namespace TensorGram.Layers.Topology
             ReturnListToString.Add("\nAttributes");
             ReturnListToString.Add("     filter: " + this.filter.ToString());
             ReturnListToString.Add("     activation: " + this.activation);
-            ReturnListToString.Add("\nInputs");
             ReturnListToString.Add("     kernel_size (" + string.Join(", ", kernel_size) +")");
-            foreach (string i in this.Inboundlayer)
-                ReturnListToString.Add("     " + i);
-            ReturnListToString.Add("\nOutputs");
-            ReturnListToString.Add("     " + this.OutboundLayer);
             return ReturnListToString;
         }
     }

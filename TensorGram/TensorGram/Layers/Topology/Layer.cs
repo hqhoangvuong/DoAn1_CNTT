@@ -19,11 +19,11 @@ namespace TensorGram.Layers
         Dense,
         Dropout,
         MaxPool2D,
-        SoftMax,
+        Softmax,
         InputLayer
     }
 
-    public class Layer:IDisposable
+    public class Layer: Topology.ILayer, IDisposable
     {
         public bool disposed;
         public string LayerName;
@@ -35,6 +35,7 @@ namespace TensorGram.Layers
         public GraphicsObject.GraphicsNode_UsrCtrl GraphicsNode;
         public bool isRendered;
         public List<string> ReturnListToString;
+        public int Level = -1;
 
         public Layer()
         {
@@ -45,7 +46,7 @@ namespace TensorGram.Layers
             GraphicsNode = new GraphicsObject.GraphicsNode_UsrCtrl();
             this.ChildLayer = new List<Layer>();
             this.ParentLayer = new List<Layer>();
-            isRendered = false;
+            this.isRendered = false;
         }
 
         protected virtual void Dispose(bool disposing)
@@ -69,27 +70,33 @@ namespace TensorGram.Layers
             GC.SuppressFinalize(this);
         }
 
-        public virtual void ReadAttribute(string _input)
+        public override void ReadAttribute(string _input)
         {
 
         }
 
-        [Obsolete]
-        public virtual void GraphicsNodeInitialize()
+        public override void GraphicsNodeInitialize()
         {
+            this.GraphicsNode.NodeByType(Enum.GetName(typeof(LayerTypes), this.Type));
             GraphicsNode.LayerName = this.LayerName;
         }
 
-        public virtual List<string> GetAttribute()
+        public override List<string> GetAttribute()
         {
             return new List<string>();
         }
 
-        public virtual List<string> ToString()
+        public override List<string> ToString()
         {
             ReturnListToString = new List<string>();
             ReturnListToString.Add("     name: " + this.LayerName);
             ReturnListToString.Add("     type: " + Enum.GetName(typeof(LayerTypes), this.Type));
+            ReturnListToString.Add("    ");
+            ReturnListToString.Add("\nInputs");
+            foreach (string i in this.Inboundlayer)
+                ReturnListToString.Add("     " + i);
+            ReturnListToString.Add("\nOutputs");
+            ReturnListToString.Add("     " + this.OutboundLayer);
             ReturnListToString.Add("    ");
             return ReturnListToString;
         }

@@ -69,9 +69,8 @@
     <Compile Include="Layers\Concatenate.cs" />
     <Compile Include="Layers\Conv2D.cs" />
     <Compile Include="Layers\Dense.cs" />
-    <Compile Include="Layers\Dropout.cs" />
-    <Compile Include="Layers\MaxPool2D.cs" />
     <Compile Include="Layers\Softmax.cs" />
+    <Compile Include="Layers\Topology\ILayer.cs" />
     <Compile Include="Layers\Topology\InputLayer.cs" />
     <Compile Include="Layers\Topology\Layer.cs" />
     <Compile Include="RenderControl\ConnectorRender_Control.cs" />
@@ -80,8 +79,7 @@
     <Compile Include="RenderControl\SlidePanel_Control.cs" />
     <Compile Include="TensorModel.cs" />
     <Compile Include="TextInput_Hander.cs" />
-    <Compile Include="Tree\GenericHelpers.cs" />
-    <Compile Include="Tree\TreeNode.cs" />
+    <Compile Include="Tree\Tree.cs" />
     <Page Include="GraphicsObject\GraphicsNode_UsrCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,7 +115,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -126,9 +123,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Graph\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Logo-01.png" />
   </ItemGroup>
