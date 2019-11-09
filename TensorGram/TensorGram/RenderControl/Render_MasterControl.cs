@@ -62,6 +62,24 @@ namespace TensorGram.RenderControl
 
         public void LayerRender(TensorModel _model)
         {
+            //Render ten Network
+            Label NetworkName = new Label();
+            NetworkName.Content = Model.ModelName;
+            NetworkName.Foreground = new SolidColorBrush(Colors.White);
+            NetworkName.FontSize = 28;
+            Canvas.SetTop(NetworkName, 0);
+            Canvas.SetLeft(NetworkName, MainCanvas.ActualWidth / 2 - 40);
+            MainCanvas.Children.Add(NetworkName);
+
+            Line separateLine = new Line();
+            separateLine.Stroke = System.Windows.Media.Brushes.LightSteelBlue;
+            separateLine.X1 = MainCanvas.ActualWidth / 2 - 300;
+            separateLine.X2 = MainCanvas.ActualWidth / 2 + 300;
+            separateLine.Y1 = 40;
+            separateLine.Y2 = 40;
+            separateLine.StrokeThickness = 3;
+            MainCanvas.Children.Add(separateLine);
+
             // Thu nghiem
             // double Y = 50;
             double X = MainCanvas.ActualWidth / 2;

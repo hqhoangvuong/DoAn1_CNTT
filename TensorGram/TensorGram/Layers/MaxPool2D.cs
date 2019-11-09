@@ -7,23 +7,23 @@ using TensorGram.Layers.Topology;
 
 namespace TensorGram.Layers
 {
-    class AvgPool2D : Layer
+    class MaxPool2D : Layer
     {
         public List<int> pool_size;
         public List<int> strides;
         public string padding;
         public string data_format;
 
-        public AvgPool2D()
+        public MaxPool2D()
         {
-            this.Type = LayerTypes.AvgPool2D;
+            this.Type = LayerTypes.MaxPool2D;
             this.pool_size = new List<int>();
             this.strides = new List<int>();
             this.padding = "";
             this.data_format = "";
         }
 
-        public AvgPool2D(string name)
+        public MaxPool2D(string name)
         {
             this.Type = LayerTypes.MaxPool2D;
             this.LayerName = name;
@@ -63,7 +63,7 @@ namespace TensorGram.Layers
                 {
                     StartIndex = _input.IndexOf(')', 0) + 2;
                 }
-                else if(pool_size.Count == 1)
+                else if (pool_size.Count == 1)
                 {
                     StartIndex = _input.IndexOf(',', 0) + 1;
                 }
@@ -80,7 +80,7 @@ namespace TensorGram.Layers
                         // Truong hop strides la tuple of 2 integers
                         StartIndex++;
                         EndIndex--;
-                        foreach(string temp in _input.Substring(StartIndex, EndIndex - StartIndex).Split(','))
+                        foreach (string temp in _input.Substring(StartIndex, EndIndex - StartIndex).Split(','))
                         {
                             this.strides.Add(int.Parse(temp));
                         }

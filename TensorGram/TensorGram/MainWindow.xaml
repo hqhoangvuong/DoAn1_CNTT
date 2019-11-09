@@ -39,14 +39,14 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Background="#FF05B405" Margin="0,18,0,0">
-            <RichTextBox x:Name="txtCodeInput" Background="#FF2D2D2D" Foreground="White" FontFamily="Consolas" Block.LineHeight="4" Height="631" BorderBrush="#FF2D2D2D" SelectionBrush="{x:Null}">
+            <RichTextBox x:Name="txtCodeInput" Background="#FF2D2D2D" Foreground="White" FontFamily="Consolas" Block.LineHeight="4" Height="631" BorderBrush="#FF2D2D2D" SelectionBrush="{x:Null}" KeyDown="txtCodeInput_KeyDown">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text=""/>
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
-            <Button x:Name="bntExec" Padding="0, 0, 0, 0" Height="53" BorderBrush="{x:Null}" Content="Execute" FontSize="36" Click="BntExec_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button x:Name="bntExec" Padding="0, 0, 0, 0" Height="56" BorderBrush="{x:Null}" Content="Execute" FontSize="36" Click="BntExec_Click"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Panel.ZIndex="2" Name="SlideMenu_StackPanel" Orientation="Horizontal" Width="250" HorizontalAlignment="Right" Margin="0,18,-250,0">
@@ -98,9 +98,7 @@
         </Menu>
 
         <Rectangle x:Name="StartupLogo" Grid.Column="1" Margin="198,104,188,97" StrokeThickness="0.5">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\Resources\Logo-01.png"/>
-            </Rectangle.Fill>
+
         </Rectangle>
         <Grid Name="Grid_ToolBox" Grid.Column="1" Height="33" Margin="10,23,596,0" VerticalAlignment="Top" Visibility="Visible">
             <Label x:Name="lbMove" Content="Move" Margin="1,0,0,0" FontSize="14" Foreground="White" Height="33" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" PreviewMouseDown="LbMove_PreviewMouseDown" MouseEnter="ToolBox_MouseEnter" MouseLeave="ToolBox_MouseLeave" MouseDown="ToolBox_MouseDown"/>

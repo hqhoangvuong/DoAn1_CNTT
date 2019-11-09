@@ -116,6 +116,10 @@ namespace TensorGram
                     return new Dense();
                 case "BatchNormalization":
                     return new BatchNormalization();
+                case "MaxPool2D":
+                    return new MaxPool2D();
+                case "Dropout":
+                    return new Dropout();
             }
 
             return new Layer();

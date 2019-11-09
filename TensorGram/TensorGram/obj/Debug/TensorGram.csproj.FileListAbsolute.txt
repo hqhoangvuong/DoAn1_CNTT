@@ -12,7 +12,6 @@ C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj
 C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.g.resources
 C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.Properties.Resources.resources
 C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.csproj.GenerateResource.cache
-C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.csproj.CoreCompileInputs.cache
 C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.exe
 C:\Users\HIKARI\Documents\GitHub\DoAn1_CNTT_Nhom4_SPKT\TensorGram\TensorGram\obj\Debug\TensorGram.pdb
 C:\Users\HIKARI\Desktop\TensorGram_Dev\TensorGram\bin\Debug\TensorGram.exe.config

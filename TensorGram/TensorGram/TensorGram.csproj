@@ -69,6 +69,8 @@
     <Compile Include="Layers\Concatenate.cs" />
     <Compile Include="Layers\Conv2D.cs" />
     <Compile Include="Layers\Dense.cs" />
+    <Compile Include="Layers\Dropout.cs" />
+    <Compile Include="Layers\MaxPool2D.cs" />
     <Compile Include="Layers\Softmax.cs" />
     <Compile Include="Layers\Topology\ILayer.cs" />
     <Compile Include="Layers\Topology\InputLayer.cs" />
@@ -123,9 +125,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\Logo-01.png" />
+    <Resource Include="Resources\Logo-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Logo-01.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hand_reasele-01.png" />

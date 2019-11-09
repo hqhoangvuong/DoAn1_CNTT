@@ -38,6 +38,7 @@ namespace TensorGram
             MainScrollViewer.MouseMove += OnMouseMove;
             this.Grid_ToolBox.Visibility = System.Windows.Visibility.Hidden;
             lbZoomRatio.Content = "100%";
+            StartupLogo.Fill = new ImageBrush { ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/TensorGram;component/Resources/Logo-01.png", UriKind.Absolute))};
         }
 
         private void BntExec_Click(object sender, RoutedEventArgs e)
@@ -304,5 +305,10 @@ namespace TensorGram
             lbZoomRatio.Content = (Zoom * 100).ToString() + "%";
         }
         #endregion
+
+        private void txtCodeInput_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
